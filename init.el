@@ -77,5 +77,12 @@
     (lambda () (setq truncate-lines nil)))
 (setq org-log-done t)
 
-(set-default-font "DejaVu Sans Mono 10")
-(set-fontset-font "fontset-default" 'unicode"WenQuanYi Bitmap Song 12") ;;for linux
+(if (eq system-type 'gnu/linux)
+    (set-default-font "DejaVu Sans Mono 12")
+    (set-fontset-font "fontset-default" 'unicode "WenQuanYi Bitmap Song 14")
+    )
+
+(if (eq system-type 'darwin)
+    (set-default-font "DejaVu Sans Mono 16")
+    (set-fontset-font "fontset-default" 'unicode "WenQuanYi Bitmap Song 16")
+ )
