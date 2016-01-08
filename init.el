@@ -76,3 +76,6 @@
 (add-hook 'org-mode-hook
     (lambda () (setq truncate-lines nil)))
 (setq org-log-done t)
+
+(set-default-font "DejaVu Sans Mono 10")
+(set-fontset-font "fontset-default" 'unicode"WenQuanYi Bitmap Song 12") ;;for linux
