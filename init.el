@@ -78,8 +78,8 @@
 (setq org-log-done t)
 
 (if (eq system-type 'gnu/linux)
-    (set-default-font "DejaVu Sans Mono 12")
-    (set-fontset-font "fontset-default" 'unicode "WenQuanYi Bitmap Song 14")
+    (set-default-font "文泉驿等宽正黑 13")
+    (set-fontset-font "fontset-default" 'unicode "文泉驿等宽正黑 20")
     )
 
 (if (eq system-type 'darwin)
