@@ -9,6 +9,16 @@
 (require 'evil)
   (evil-mode 1)
 
+;auto-complete
+(require 'auto-complete)
+(ac-config-default)
+
+;cal-china-x
+(require 'cal-china-x)
+(setq mark-holidays-in-calendar t)
+(setq cal-china-x-important-holidays cal-china-x-chinese-holidays)
+(setq calendar-holidays cal-china-x-important-holidays)
+
 ;cscope
 (require 'xcscope)
 
