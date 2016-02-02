@@ -15,6 +15,9 @@
 ;asciidoc
 (require 'adoc-mode)
 
+;o-bog
+(require 'o-blog)
+
 ;gtags
 ;(add-to-list 'load-path "~/.emacs.d")
 (autoload 'gtags-mode "gtags" "" t)
