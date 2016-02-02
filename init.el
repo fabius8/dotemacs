@@ -99,3 +99,7 @@
     (set-default-font "DejaVu Sans Mono 16")
     (set-fontset-font "fontset-default" 'unicode "WenQuanYi Bitmap Song 16")
  )
+
+(setq display-time-24hr-format t)
+(setq org-todo-keywords
+  '((sequence "TODO" "FEEDBACK" "VERIFY" "|" "DONE" "DELEGATED")))
