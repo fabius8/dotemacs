@@ -19,6 +19,13 @@
 (setq cal-china-x-important-holidays cal-china-x-chinese-holidays)
 (setq calendar-holidays cal-china-x-important-holidays)
 
+;recentf
+(require 'recentf)
+(recentf-mode 1)
+(setq recentf-auto-cleanup 'never)
+(setq recentf-max-menu-items 25)
+(global-set-key "\C-x\ \C-r" 'recentf-open-files)
+
 ;cscope
 (require 'xcscope)
 
@@ -66,7 +73,8 @@
  '(ansi-color-faces-vector
    [default default default italic underline success warning error])
  '(custom-enabled-themes (quote (tango-dark)))
- '(send-mail-function nil))
+ '(send-mail-function nil)
+ '(show-trailing-whitespace t))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -103,3 +111,11 @@
 (setq display-time-24hr-format t)
 (setq org-todo-keywords
   '((sequence "TODO" "FEEDBACK" "VERIFY" "|" "DONE" "DELEGATED")))
+
+(defun set-newline-and-indent ()
+  (local-set-key (kbd "RET") 'newline-and-indent))
+(add-hook 'c-mode 'set-newline-and-indent)
+(setq-default c-basic-offset 4)
+(setq c-default-style "linux"
+          c-basic-offset 4)
+
