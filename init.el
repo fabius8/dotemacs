@@ -29,6 +29,10 @@
 ;cscope
 (require 'xcscope)
 
+;which-key
+(require 'which-key)
+(which-key-mode)
+
 ;asciidoc
 (require 'adoc-mode)
 
@@ -112,6 +116,7 @@
 (setq org-todo-keywords
   '((sequence "TODO" "FEEDBACK" "VERIFY" "|" "DONE" "DELEGATED")))
 
+; 自动对齐
 (defun set-newline-and-indent ()
   (local-set-key (kbd "RET") 'newline-and-indent))
 (add-hook 'c-mode 'set-newline-and-indent)
