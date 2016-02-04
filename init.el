@@ -59,6 +59,8 @@
  ;; If there is more than one, they won't work right.
  '(default ((t (:family "文泉驿等宽正黑" :foundry "unknown" :slant normal :weight normal :height 120 :width normal)))))
 
+(tool-bar-mode -1)
+
 (setq auto-save-default nil)
 (setq make-backup-files nil)
 (setq org-export-with-sub-superscripts (quote {}))
