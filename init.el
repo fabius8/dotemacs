@@ -108,7 +108,7 @@
     )
 
 (if (eq system-type 'darwin)
-    (set-default-font "DejaVu Sans Mono 16")
+    (set-default-font "Monaco 16")
     (set-fontset-font "fontset-default" 'unicode "WenQuanYi Bitmap Song 16")
  )
 
