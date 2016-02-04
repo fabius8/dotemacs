@@ -95,3 +95,6 @@
 (setq c-default-style "linux"
           c-basic-offset 4)
 
+
+; 窗口最大化
+(toggle-frame-maximized)
