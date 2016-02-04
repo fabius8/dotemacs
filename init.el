@@ -120,3 +120,8 @@
 (require 'bing-dict)
 (global-set-key (kbd "C-c d") 'bing-dict-brief)
 (global-set-key (kbd "<f12>") 'bing-dict-brief)
+
+; 透明背景
+(set-frame-parameter (selected-frame) 'alpha '(80 100))
+(add-to-list 'default-frame-alist '(alpha 80 100))
+
