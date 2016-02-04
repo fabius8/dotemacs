@@ -119,3 +119,4 @@
 ; bing词典
 (require 'bing-dict)
 (global-set-key (kbd "C-c d") 'bing-dict-brief)
+(global-set-key (kbd "<f12>") 'bing-dict-brief)
