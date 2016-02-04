@@ -115,3 +115,7 @@
 ;; Enable Chinese word segmentation support (支持中文分词)
 ;; (setq youdao-dictionary-use-chinese-word-segmentation t)
 ;; ===============有道词典配置====================
+
+; bing词典
+(require 'bing-dict)
+(global-set-key (kbd "C-c d") 'bing-dict-brief)
