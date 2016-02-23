@@ -100,6 +100,8 @@
 
 ; 窗口最大化
 (toggle-frame-maximized)
+; 滚屏移动1行，不是中间
+(setq scroll-step 1)
 
 ;; ===============有道词典配置====================
 ;; Enable Cache
