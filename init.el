@@ -76,7 +76,7 @@
     (lambda () (setq truncate-lines nil)))
 (setq org-log-done t)
 (setq org-todo-keywords
-  '((sequence "TODO" "FEEDBACK" "VERIFY" "|" "DONE" "DELEGATED")))
+  '((sequence "TODO" "FEEDBACK" "|" "DONE" "DELEGATED")))
 
 (if (eq system-type 'gnu/linux)
     (set-default-font "文泉驿等宽正黑 13")
