@@ -23,7 +23,7 @@
 (require 'recentf)
 (recentf-mode 1)
 (setq recentf-auto-cleanup 'never)
-(setq recentf-max-menu-items 25)
+(setq recentf-max-menu-items 30)
 (global-set-key "\C-x\ \C-r" 'recentf-open-files)
 
 ;cscope
@@ -31,6 +31,7 @@
 (global-set-key (kbd "C-;") 'cscope-find-this-symbol)
 (global-set-key (kbd "<f4>") 'cscope-create-list-of-files-to-index)
 (global-set-key (kbd "C-\'") 'cscope-find-global-definition)
+(setq cscope-display-cscope-buffer nil)
 
 ;which-key
 (require 'which-key)
