@@ -136,3 +136,9 @@
 ; 编码方式
 (prefer-coding-system 'gb2312)
 (prefer-coding-system 'utf-8)
+
+; 返回上一级buffer
+(global-unset-key (kbd "C-o"))
+(global-set-key (kbd "C-o") 'previous-buffer)
+(global-unset-key (kbd "C-i"))
+(global-set-key (kbd "C-i") 'next-buffer)
