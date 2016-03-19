@@ -1,4 +1,9 @@
 (1
+ (remember-themes .
+		  [(20160318 1351)
+		   ((emacs
+		     (24 1)))
+		   "Remembers the last theme in use and re-loads for the next session." single])
  (zone-nyan .
 	    [(0 2 2)
 	     ((esxml
@@ -2467,7 +2472,7 @@
 	  [(2927)
 	   nil "Adds support for IPython to python-mode.el" single])
  (insert-shebang .
-		 [(0 9 3)
+		 [(0 9 4)
 		  nil "Insert shebang line automatically." single])
  (inline-crypt .
 	       [(0 1 4)
