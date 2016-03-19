@@ -31,7 +31,12 @@
 (global-set-key (kbd "<f4>") 'cscope-create-list-of-files-to-index)
 (global-set-key (kbd "C-;") 'cscope-find-this-symbol)
 (global-set-key (kbd "C-\'") 'cscope-find-global-definition)
+(global-set-key (kbd "C-[") 'cscope-find-functions-calling-this-function)
 (setq cscope-display-cscope-buffer t)
+
+; sr-speedbar 查看c代码定义
+(require 'sr-speedbar)
+(global-set-key (kbd "<f5>") 'sr-speedbar-toggle)
 
 ;which-key
 (require 'which-key)
@@ -140,3 +145,4 @@
 ; 快捷键取消绑定
 ;(dolist (key '("\C-o" "\c-i"))
 ;  (global-unset-key))
+
