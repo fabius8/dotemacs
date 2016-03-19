@@ -30,8 +30,7 @@
 (require 'xcscope)
 (global-set-key (kbd "C-;") 'cscope-find-this-symbol)
 (global-set-key (kbd "<f4>") 'cscope-create-list-of-files-to-index)
-(global-set-key (kbd "C-\ f") 'cscope-find-called-functions)
-(global-set-key (kbd "C-\ g") 'cscope-find-global-definition)
+(global-set-key (kbd "C-\'") 'cscope-find-global-definition)
 
 ;which-key
 (require 'which-key)
