@@ -137,8 +137,12 @@
 (prefer-coding-system 'gb2312)
 (prefer-coding-system 'utf-8)
 
+; 快捷键取消绑定
+;(dolist (key '("\C-o" "\c-i"))
+;  (global-unset-key))
+
 ; 返回上一级buffer
-(global-unset-key (kbd "C-o"))
-(global-set-key (kbd "C-o") 'previous-buffer)
-(global-unset-key (kbd "C-i"))
-(global-set-key (kbd "C-i") 'next-buffer)
+(global-unset-key (kbd "\C-o"))
+(global-set-key (kbd "\C-o") 'previous-buffer)
+(global-unset-key (kbd "\C-i"))
+(global-set-key (kbd "\C-i") 'next-buffer)
