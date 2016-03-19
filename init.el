@@ -29,9 +29,9 @@
 ;cscope
 (require 'xcscope)
 (global-set-key (kbd "<f4>") 'cscope-create-list-of-files-to-index)
-(global-set-key (kbd "C-;") 'cscope-find-this-symbol)
-(global-set-key (kbd "C-\'") 'cscope-find-global-definition)
-(global-set-key (kbd "C-[") 'cscope-find-functions-calling-this-function)
+(global-set-key (kbd "C-; s") 'cscope-find-this-symbol)
+(global-set-key (kbd "C-; d") 'cscope-find-global-definition)
+(global-set-key (kbd "C-; f") 'cscope-find-functions-calling-this-function)
 (setq cscope-display-cscope-buffer t)
 
 ; sr-speedbar 查看c代码定义
