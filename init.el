@@ -28,8 +28,8 @@
 
 ;cscope
 (require 'xcscope)
-(global-set-key (kbd "C-;") 'cscope-find-this-symbol)
 (global-set-key (kbd "<f4>") 'cscope-create-list-of-files-to-index)
+(global-set-key (kbd "C-;") 'cscope-find-this-symbol)
 (global-set-key (kbd "C-\'") 'cscope-find-global-definition)
 (setq cscope-display-cscope-buffer t)
 
