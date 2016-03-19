@@ -129,3 +129,6 @@
 (set-frame-parameter (selected-frame) 'alpha '(80 100))
 (add-to-list 'default-frame-alist '(alpha 80 100))
 
+; 编码方式
+(prefer-coding-system 'gb2312)
+(prefer-coding-system 'utf-8)
