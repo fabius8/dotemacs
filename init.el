@@ -134,9 +134,15 @@
 (global-set-key (kbd "C-c d") 'bing-dict-brief)
 (global-set-key (kbd "<f12>") 'bing-dict-brief)
 
-; 透明背景
+; 透明背景(mac有用，centos上没用)
 (set-frame-parameter (selected-frame) 'alpha '(80 100))
 (add-to-list 'default-frame-alist '(alpha 80 100))
+
+; 透明背景
+(require 'seethru)
+
+; 黄金分割窗口
+(require 'golden-ratio)
 
 ; 编码方式
 (prefer-coding-system 'gb2312)
