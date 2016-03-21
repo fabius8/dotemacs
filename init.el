@@ -161,3 +161,6 @@
 ;(dolist (key '("\C-o" "\c-i"))
 ;  (global-unset-key))
 
+; alpha
+(require 'alpha)
+
