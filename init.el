@@ -9,6 +9,10 @@
 (require 'evil)
   (evil-mode 1)
 
+;relative num
+(require 'linum-relative)
+(setq linum-relative-toggle t)
+
 ;auto-complete
 (require 'auto-complete)
 (ac-config-default)
