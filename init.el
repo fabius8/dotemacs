@@ -47,14 +47,12 @@
 (defun select-next-window ()
   (other-window 1))
 (add-hook 'sr-speedbar-visiting-tag-hook 'select-next-window t)
-
 (defun my-sr-speedbar-open-hook ()
   (add-hook 'sr-speedbar-before-visiting-file-hook 'select-next-window t)
   (add-hook 'sr-speedbar-before-visiting-tag-hook 'select-next-window t)
   (add-hook 'sr-speedbar-visiting-file-hook 'select-next-window t)
   (add-hook 'sr-speedbar-visiting-tag-hook 'select-next-window t)
   )
-
 (advice-add 'sr-speedbar-open :after #'my-sr-speedbar-open-hook)
 
 ;which-key
