@@ -49,6 +49,7 @@
   (add-hook 'speedbar-before-visiting-tag-hook 'select-next-window t)
   )
 (advice-add 'sr-speedbar-open :after #'my-sr-speedbar-open-hook)
+(setq sr-speedbar-skip-other-window-p t)
 
 ;which-key
 (require 'which-key)
@@ -156,6 +157,7 @@
 
 ; 透明背景
 (require 'seethru)
+(seethru 55)
 
 ; 黄金分割窗口
 (require 'golden-ratio)
