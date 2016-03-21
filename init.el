@@ -48,7 +48,7 @@
   (add-hook 'speedbar-before-visiting-file-hook 'select-next-window t)
   (add-hook 'speedbar-before-visiting-tag-hook 'select-next-window t)
   )
-(advice-add 'sr-speedbar-open :after 'my-sr-speedbar-open-hook)
+(advice-add 'sr-speedbar-open :after #'my-sr-speedbar-open-hook)
 
 ;which-key
 (require 'which-key)
