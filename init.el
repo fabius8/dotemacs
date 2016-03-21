@@ -49,6 +49,10 @@
 
 ;asciidoc
 (require 'adoc-mode)
+(add-to-list 'auto-mode-alist (cons "\\.adoc\\'" 'adoc-mode))
+(add-hook 'adoc-mode-hook (lambda()
+  (buffer-face-mode t)))`
+
 
 ;o-bog
 (require 'o-blog)
@@ -77,6 +81,8 @@
 
 (setq auto-save-default nil)
 (setq make-backup-files nil)
+
+; org-mode
 (setq org-export-with-sub-superscripts (quote {}))
 (setq org-src-preserve-indentation t)
 (setq org-src-fontify-natively t)
