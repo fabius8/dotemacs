@@ -11,7 +11,8 @@
 
 ;relative num
 (require 'linum-relative)
-(setq linum-relative-toggle t)
+(global-linum-mode 1)
+(linum-relative-mode 1)
 
 ;auto-complete
 (require 'auto-complete)
