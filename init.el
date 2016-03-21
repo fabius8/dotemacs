@@ -44,13 +44,11 @@
 (global-set-key (kbd "<f5>") 'sr-speedbar-toggle)
 (defun select-next-window ()
   (other-window 1))
-
 (defun my-sr-speedbar-open-hook ()
   (add-hook 'speedbar-before-visiting-file-hook 'select-next-window t)
   (add-hook 'speedbar-before-visiting-tag-hook 'select-next-window t)
   )
-
-(advice-add 'sr-speedbar-open 'after 'my-sr-speedbar-open-hook)
+(advice-add 'sr-speedbar-open :after 'my-sr-speedbar-open-hook)
 
 ;which-key
 (require 'which-key)
@@ -169,7 +167,4 @@
 ; 快捷键取消绑定
 ;(dolist (key '("\C-o" "\c-i"))
 ;  (global-unset-key))
-
-; alpha
-(require 'alpha)
 
