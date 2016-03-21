@@ -50,9 +50,6 @@
 ;asciidoc
 (require 'adoc-mode)
 (add-to-list 'auto-mode-alist (cons "\\.adoc\\'" 'adoc-mode))
-(add-hook 'adoc-mode-hook (lambda()
-  (buffer-face-mode t)))`
-
 
 ;o-bog
 (require 'o-blog)
