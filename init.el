@@ -75,6 +75,7 @@
  '(default ((t (:family "文泉驿等宽正黑" :foundry "unknown" :slant normal :weight normal :height 120 :width normal)))))
 
 (tool-bar-mode -1)
+(menu-bar-mode -1)
 
 (setq auto-save-default nil)
 (setq make-backup-files nil)
