@@ -37,7 +37,7 @@
 (global-set-key (kbd "C-; s") 'cscope-find-this-symbol)
 (global-set-key (kbd "C-; d") 'cscope-find-global-definition)
 (global-set-key (kbd "C-; f") 'cscope-find-functions-calling-this-function)
-(setq cscope-display-cscope-buffer t)
+(setq cscope-display-cscope-buffer nil)
 
 ; sr-speedbar 查看c代码定义
 (require 'sr-speedbar)
