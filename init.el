@@ -9,6 +9,8 @@
 (require 'evil)
   (evil-mode 1)
 (define-key evil-motion-state-map "\C-]" nil)
+(global-unset-key (kdb "C-j"))
+(global-set-key (kdb "C-j") 'evil-window-down)
 
 ;relative num
 (require 'linum-relative)
@@ -34,12 +36,13 @@
 
 ;cscope
 (require 'xcscope)
-(global-unset-key (kbd "\C-["))
-(global-set-key (kbd "\C-[") 'cscope-find-this-symbol)
+(global-unset-key (kbd "\C-]"))
+(global-unset-key (kbd "\C-\\"))
+(global-set-key (kbd "\C-]") 'cscope-find-this-symbol)
 (global-set-key (kbd "<f4>") 'cscope-create-list-of-files-to-index)
-(global-set-key (kbd "C-; s") 'cscope-find-this-symbol)
-(global-set-key (kbd "C-; d") 'cscope-find-global-definition)
-(global-set-key (kbd "C-; f") 'cscope-find-functions-calling-this-function)
+(global-set-key (kbd "C-\\ s") 'cscope-find-this-symbol)
+(global-set-key (kbd "C-\\ d") 'cscope-find-global-definition)
+(global-set-key (kbd "C-\\ f") 'cscope-find-functions-calling-this-function)
 (setq cscope-display-cscope-buffer nil)
 
 ; sr-speedbar 查看c代码定义
