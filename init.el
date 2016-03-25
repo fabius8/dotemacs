@@ -15,9 +15,7 @@
 (global-set-key (kbd "C-k") 'evil-window-up)
 (global-unset-key (kbd "C-l"))
 (global-set-key (kbd "C-l") 'evil-window-right)
-(global-unset-key (kbd "C-h"))
-(global-set-key (kbd "C-h") 'evil-windown-left)
-
+(define-key evil-motion-state-map "\C-h" 'evil-window-left)
 
 ;relative num
 (require 'linum-relative)
