@@ -8,6 +8,7 @@
 ;evil
 (require 'evil)
   (evil-mode 1)
+(define-key evil-motion-state-map "\C-]" nil)
 
 ;relative num
 (require 'linum-relative)
@@ -33,6 +34,8 @@
 
 ;cscope
 (require 'xcscope)
+(global-unset-key (kbd "\C-["))
+(global-set-key (kbd "\C-[") 'cscope-find-this-symbol)
 (global-set-key (kbd "<f4>") 'cscope-create-list-of-files-to-index)
 (global-set-key (kbd "C-; s") 'cscope-find-this-symbol)
 (global-set-key (kbd "C-; d") 'cscope-find-global-definition)
