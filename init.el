@@ -9,12 +9,9 @@
 (require 'evil)
   (evil-mode 1)
 (define-key evil-motion-state-map "\C-]" nil)
-(global-unset-key (kbd "C-j"))
-(global-set-key (kbd "C-j") 'evil-window-down)
-(global-unset-key (kbd "C-k"))
-(global-set-key (kbd "C-k") 'evil-window-up)
-(global-unset-key (kbd "C-l"))
-(global-set-key (kbd "C-l") 'evil-window-right)
+(define-key evil-motion-state-map "\C-j" 'evil-window-down)
+(define-key evil-motion-state-map "\C-k" 'evil-window-up)
+(define-key evil-motion-state-map "\C-l" 'evil-window-right)
 (define-key evil-motion-state-map "\C-h" 'evil-window-left)
 
 ;relative num
