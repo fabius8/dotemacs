@@ -49,6 +49,7 @@
 (global-set-key (kbd "C-\\ s") 'cscope-find-this-symbol)
 (global-set-key (kbd "C-\\ d") 'cscope-find-global-definition)
 (global-set-key (kbd "C-\\ f") 'cscope-find-functions-calling-this-function)
+(setq cscope-close-window-after-select t)
 ;(setq cscope-display-cscope-buffer t)
 ;(setq cscope-initial-directory "~/.emacs_autotags")
 
