@@ -172,7 +172,3 @@
 (prefer-coding-system 'gb2312)
 (prefer-coding-system 'utf-8)
 
-; 快捷键取消绑定
-;(dolist (key '("\C-o" "\c-i"))
-;  (global-unset-key))
-
