@@ -23,6 +23,9 @@
 (global-linum-mode 1)
 (linum-relative-mode 1)
 
+;git-gutter
+(global-git-gutter-mode +1)
+
 ;auto-complete
 (require 'auto-complete)
 (ac-config-default)
