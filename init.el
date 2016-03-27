@@ -66,9 +66,6 @@
 (require 'adoc-mode)
 (add-to-list 'auto-mode-alist (cons "\\.adoc\\'" 'adoc-mode))
 
-;o-bog
-(require 'o-blog)
-
 ;blink
 (blink-cursor-mode -1)
 
@@ -122,6 +119,7 @@
  )
 
 (setq display-time-24hr-format t)
+
 ; 自动对齐
 (defun set-newline-and-indent ()
   (local-set-key (kbd "RET") 'newline-and-indent))
@@ -161,13 +159,6 @@
 ; 透明背景(mac有用，centos上没用)
 (set-frame-parameter (selected-frame) 'alpha '(80 100))
 (add-to-list 'default-frame-alist '(alpha 80 100))
-
-; 透明背景
-(require 'seethru)
-(seethru 55)
-
-; 黄金分割窗口
-(require 'golden-ratio)
 
 ; 编码方式
 (prefer-coding-system 'gb2312)
