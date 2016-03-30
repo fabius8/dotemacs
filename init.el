@@ -10,11 +10,11 @@
 (global-unset-key (kbd "\C-f"))
 (global-set-key (kbd "\C-b") 'evil-scroll-page-up)
 (global-set-key (kbd "\C-f") 'evil-scroll-page-down)
-(define-key package-menu-mode-map "h" nil)
-(global-set-key (kbd "h") 'evil-backward-char)
-(global-set-key (kbd "j") 'evil-next-line)
-(global-set-key (kbd "l") 'evil-forward-char)
-(global-set-key (kbd "k") 'evil-previous-line)
+;(define-key package-menu-mode-map "h" nil)
+;(global-set-key (kbd "h") 'evil-backward-char)
+;(global-set-key (kbd "j") 'evil-next-line)
+;(global-set-key (kbd "l") 'evil-forward-char)
+;(global-set-key (kbd "k") 'evil-previous-line)
 
 ;evil
 (require 'evil)
