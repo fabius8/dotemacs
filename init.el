@@ -4,6 +4,8 @@
   (push '("melpa" . "http://melpa.milkbox.net/packages/")
         package-archives)
   (package-initialize)
+;finder+
+(require 'finder+)
 
 ;模拟vi
 (global-unset-key (kbd "\C-b"))
@@ -71,6 +73,7 @@
 (require 'sr-speedbar)
 (global-set-key (kbd "<f5>") 'sr-speedbar-toggle)
 (setq sr-speedbar-skip-other-window-p t)
+(setq speedbar-tag-hierarchy-method nil) 
 
 ;which-key
 (require 'which-key)
