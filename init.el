@@ -5,6 +5,17 @@
         package-archives)
   (package-initialize)
 
+;模拟vi
+(global-unset-key (kbd "\C-b"))
+(global-unset-key (kbd "\C-f"))
+(global-set-key (kbd "\C-b") 'evil-scroll-page-up)
+(global-set-key (kbd "\C-f") 'evil-scroll-page-down)
+(define-key package-menu-mode-map "h" nil)
+(global-set-key (kbd "h") 'evil-backward-char)
+(global-set-key (kbd "j") 'evil-next-line)
+(global-set-key (kbd "l") 'evil-forward-char)
+(global-set-key (kbd "k") 'evil-previous-line)
+
 ;evil
 (require 'evil)
   (evil-mode 1)
@@ -66,8 +77,8 @@
 (which-key-mode)
 
 ;asciidoc
-(require 'adoc-mode)
-(add-to-list 'auto-mode-alist (cons "\\.adoc\\'" 'adoc-mode))
+;(require 'adoc-mode)
+;(add-to-list 'auto-mode-alist (cons "\\.adoc\\'" 'adoc-mode))
 
 ;blink
 (blink-cursor-mode -1)

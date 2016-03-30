@@ -64,7 +64,9 @@
 	 (:keywords "ampc" "mpc" "mpd"))])
  (arbitools .
 	    [(0 53)
-	     nil "Package for chess tournaments administration" single
+	     ((cl-lib
+	       (0 5)))
+	     "Package for chess tournaments administration" single
 	     ((:url . "http://elpa.gnu.org/packages/arbitools.html")
 	      (:keywords))])
  (ascii-art-to-unicode .
@@ -584,7 +586,7 @@
 	     ((:url . "https://github.com/michael-heerdegen/on-screen.el")
 	      (:keywords "convenience"))])
  (org .
-      [(20160321)
+      [(20160328)
        nil "Outline-based notes management and organizer" tar nil])
  (osc .
       [(0 1)
@@ -670,7 +672,7 @@
 	    ((:url . "http://elpa.gnu.org/packages/sed-mode.html")
 	     (:keywords))])
  (seq .
-      [(2 13)
+      [(2 14)
        nil "Sequence manipulation functions" tar
        ((:keywords "sequences")
 	(:url . "http://elpa.gnu.org/packages/seq.html"))])
