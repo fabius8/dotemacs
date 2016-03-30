@@ -12,6 +12,7 @@
 (global-unset-key (kbd "\C-f"))
 (global-set-key (kbd "\C-b") 'evil-scroll-page-up)
 (global-set-key (kbd "\C-f") 'evil-scroll-page-down)
+(global-set-key (kbd "\C-x t") 'delete-trailing-whitespace)
 ;(define-key package-menu-mode-map "h" nil)
 ;(global-set-key (kbd "h") 'evil-backward-char)
 ;(global-set-key (kbd "j") 'evil-next-line)
@@ -73,7 +74,7 @@
 (require 'sr-speedbar)
 (global-set-key (kbd "<f5>") 'sr-speedbar-toggle)
 (setq sr-speedbar-skip-other-window-p t)
-(setq speedbar-tag-hierarchy-method nil) 
+(setq speedbar-tag-hierarchy-method nil)
 
 ;which-key
 (require 'which-key)
@@ -180,4 +181,3 @@
 ; 编码方式
 (prefer-coding-system 'gb2312)
 (prefer-coding-system 'utf-8)
-
