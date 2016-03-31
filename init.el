@@ -4,6 +4,7 @@
   (push '("melpa" . "http://melpa.milkbox.net/packages/")
         package-archives)
   (package-initialize)
+
 ;finder+
 (require 'finder+)
 
@@ -72,9 +73,10 @@
 
 ; sr-speedbar 查看c代码定义
 (require 'sr-speedbar)
-(global-set-key (kbd "<f5>") 'sr-speedbar-toggle)
-(setq sr-speedbar-skip-other-window-p t)
 (setq speedbar-tag-hierarchy-method nil)
+
+(require 'projectile-speedbar)
+(global-set-key (kbd "<f5>") 'projectile-speedbar-toggle)
 
 ;which-key
 (require 'which-key)
