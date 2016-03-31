@@ -111,6 +111,7 @@
 
 (setq auto-save-default nil)
 (setq make-backup-files nil)
+(setq truncate-lines nil)
 
 ; org-mode
 (setq org-export-with-sub-superscripts (quote {}))
