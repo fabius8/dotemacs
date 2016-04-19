@@ -130,7 +130,7 @@
   '((sequence "TODO" "FEEDBACK" "|" "DONE" "DELEGATED")))
 
 (if (eq system-type 'gnu/linux)
-    (set-default-font "文泉驿等宽正黑 13")
+    (set-default-font "文泉驿等宽正黑 14")
     (set-fontset-font "fontset-default" 'unicode "文泉驿等宽正黑 20")
     )
 
