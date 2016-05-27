@@ -151,7 +151,9 @@
 
 
 ; 窗口最大化
-(toggle-frame-maximized)
+(if (not (eq window-system 'nil))
+    (toggle-frame-maximized)
+)
 ; 滚屏移动1行，不是中间
 (setq scroll-step 1)
 
