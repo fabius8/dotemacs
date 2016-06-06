@@ -1,8 +1,8 @@
 (require 'package)
   (push '("marmalade" . "http://marmalade-repo.org/packages/")
-        package-archives )
+	package-archives )
   (push '("melpa" . "http://melpa.milkbox.net/packages/")
-        package-archives)
+	package-archives)
   (package-initialize)
 
 ;finder+
@@ -74,9 +74,23 @@
 ; sr-speedbar 查看c代码定义
 (require 'sr-speedbar)
 (setq speedbar-tag-hierarchy-method nil)
+(defun sb-expand-curren-file ()
+    "Expand current file in speedbar buffer"
+(interactive)
+  (setq current-file (buffer-file-name))
+  (sr-speedbar-refresh)
+;  (switch-to-buffer-other-frame "*SPEEDBAR*")
+  (speedbar-find-selected-file current-file)
+  (speedbar-expand-line))
+(add-hook 'speedbar-visiting-file-hook 'sb-expand-curren-file t)
+(add-hook 'speedbar-visiting-tag-hook 'sb-expand-curren-file t)
 
-(require 'projectile-speedbar)
-(global-set-key (kbd "<f5>") 'projectile-speedbar-toggle)
+(defun select-next-window ()
+  (other-window 1))
+(add-hook 'speedbar-visiting-file-hook 'select-next-window t)
+(add-hook 'speedbar-visiting-tag-hook 'select-next-window t)
+
+(global-set-key (kbd "<f5>") 'sr-speedbar-toggle)
 
 ;which-key
 (require 'which-key)
@@ -122,7 +136,7 @@
 (define-key global-map "\C-cl" 'org-store-link)
 (define-key global-map "\C-ca" 'org-agenda)
 (setq org-agenda-files (list
-                        "~/github/hello/work.org"))
+			"~/github/hello/work.org"))
 (add-hook 'org-mode-hook
     (lambda () (setq truncate-lines nil)))
 (setq org-log-done t)
@@ -147,7 +161,7 @@
 (add-hook 'c-mode 'set-newline-and-indent)
 (setq-default c-basic-offset 4)
 (setq c-default-style "linux"
-          c-basic-offset 4)
+	  c-basic-offset 4)
 
 
 ; 窗口最大化
@@ -187,3 +201,9 @@
 (prefer-coding-system 'gb2312)
 (prefer-coding-system 'utf-8)
 
+; jumplist
+(require 'jumplist)
+(global-set-key (kbd "C-<") 'jumplist-previous)
+(global-set-key (kbd "C->") 'jumplist-next)
+(custom-set-variables
+ '(jumplist-ex-mode t))
