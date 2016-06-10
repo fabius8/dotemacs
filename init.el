@@ -204,9 +204,3 @@
 (prefer-coding-system 'gb2312)
 (prefer-coding-system 'utf-8)
 
-; jumplist
-(require 'jumplist)
-(global-set-key (kbd "C-<") 'jumplist-previous)
-(global-set-key (kbd "C->") 'jumplist-next)
-(custom-set-variables
- '(jumplist-ex-mode t))
