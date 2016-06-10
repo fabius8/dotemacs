@@ -19,6 +19,7 @@
 ;(global-set-key (kbd "j") 'evil-next-line)
 ;(global-set-key (kbd "l") 'evil-forward-char)
 ;(global-set-key (kbd "k") 'evil-previous-line)
+(global-set-key (kbd "\C-i") 'evil-jump-forward)
 
 ;evil
 (require 'evil)
