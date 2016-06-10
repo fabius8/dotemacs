@@ -161,7 +161,10 @@
 (add-hook 'c-mode 'set-newline-and-indent)
 (setq-default c-basic-offset 4)
 (setq c-default-style "linux"
-	  c-basic-offset 4)
+      c-basic-offset 4)
+(setq-default c-basic-offset 4
+	      tab-width 4
+	      indent-tabs-mode nil)
 
 
 ; 窗口最大化
