@@ -128,6 +128,10 @@
 (setq make-backup-files nil)
 (setq truncate-lines nil)
 
+; 平滑滚屏
+(require 'smooth-scrolling)
+(smooth-scrolling-mode 1)
+
 ; org-mode
 (setq org-export-with-sub-superscripts (quote {}))
 (setq org-src-preserve-indentation t)
@@ -173,7 +177,7 @@
     (toggle-frame-maximized)
 )
 ; 滚屏移动1行，不是中间
-(setq scroll-step 1)
+;(setq scroll-step 1)
 
 ;; ===============有道词典配置====================
 ;; Enable Cache
