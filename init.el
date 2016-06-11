@@ -30,6 +30,11 @@
 (define-key evil-motion-state-map "\C-l" 'evil-window-right)
 (define-key evil-motion-state-map "\C-h" 'evil-window-left)
 
+
+;evil highlight
+(require 'evil-search-highlight-persist)
+(global-evil-search-highlight-persist t)
+
 ;info
 (define-key Info-mode-map (kbd "w") nil)
 (define-key Info-mode-map (kbd "b") nil)
