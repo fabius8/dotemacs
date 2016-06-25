@@ -43,6 +43,7 @@
 (require 'linum-relative)
 (global-linum-mode 1)
 (linum-relative-mode 1)
+(setq linum-relative-current-symbol "")
 
 ;git-gutter
 (global-git-gutter-mode +1)
