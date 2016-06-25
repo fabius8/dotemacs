@@ -137,7 +137,7 @@
 ; 平滑滚屏
 (require 'smooth-scrolling)
 (smooth-scrolling-mode 1)
-(setq smooth-scroll-margin 1)
+(setq smooth-scroll-margin 2)
 
 ; org-mode
 (setq org-export-with-sub-superscripts (quote {}))
