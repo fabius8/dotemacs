@@ -19,7 +19,6 @@
 ;(global-set-key (kbd "j") 'evil-next-line)
 ;(global-set-key (kbd "l") 'evil-forward-char)
 ;(global-set-key (kbd "k") 'evil-previous-line)
-(global-set-key (kbd "\C-i") 'evil-jump-forward)
 
 ;evil
 (require 'evil)
@@ -216,3 +215,16 @@
 (prefer-coding-system 'gb2312)
 (prefer-coding-system 'utf-8)
 
+(require 'jumplist)
+(custom-set-variables
+ '(jumplist-hook-commands
+   '(dired-jump
+     isearch-forward
+     cscope-find-this-symbol
+     cscope-find-this-file
+     cscope-find-functions-calling-this-function
+     cscope-find-global-definition-no-prompting))
+ '(jumplist-ex-mode t))
+
+(define-key evil-motion-state-map "\C-o" 'jumplist-previous)
+(define-key evil-motion-state-map "\C-i" 'jumplist-next)
