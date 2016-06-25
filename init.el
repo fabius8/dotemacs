@@ -1,7 +1,7 @@
 (require 'package)
-  (push '("marmalade" . "http://marmalade-repo.org/packages/")
+  (push '("marmalade" . "https://mirrors.tuna.tsinghua.edu.cn/elpa/marmalade/")
 	package-archives )
-  (push '("melpa" . "http://melpa.milkbox.net/packages/")
+  (push '("melpa" . "http://elpa.codefalling.com/melpa/")
 	package-archives)
   (package-initialize)
 
@@ -32,8 +32,8 @@
 
 
 ;evil highlight
-(require 'evil-search-highlight-persist)
-(global-evil-search-highlight-persist t)
+;(require 'evil-search-highlight-persist)
+;(global-evil-search-highlight-persist t)
 
 ;info
 (define-key Info-mode-map (kbd "w") nil)
