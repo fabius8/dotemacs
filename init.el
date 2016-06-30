@@ -227,7 +227,8 @@
      cscope-find-this-file
      cscope-find-functions-calling-this-function
      cscope-find-global-definition-no-prompting
-     find-file-at-point))
+     find-file-at-point
+     evil-goto-definition))
  '(jumplist-ex-mode t))
 
 (define-key evil-motion-state-map "\C-o" 'jumplist-previous)
