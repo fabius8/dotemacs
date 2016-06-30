@@ -1,8 +1,8 @@
 (require 'package)
   (push '("marmalade" . "https://mirrors.tuna.tsinghua.edu.cn/elpa/marmalade/")
-	package-archives )
+    package-archives )
   (push '("melpa" . "http://elpa.codefalling.com/melpa/")
-	package-archives)
+    package-archives)
   (package-initialize)
 
 ;finder+
@@ -77,22 +77,26 @@
 ;(setq cscope-display-cscope-buffer t)
 ;(setq cscope-initial-directory "~/.emacs_autotags")
 
-; sr-speedbar 查看c代码定义
+;; sr-speedbar 查看c代码定义
 (require 'sr-speedbar)
 (setq speedbar-tag-hierarchy-method nil)
+
 (defun sb-expand-curren-file ()
-    "Expand current file in speedbar buffer"
-(interactive)
+  "Expand current file in speedbar buffer"
+  (interactive)
   (setq current-file (buffer-file-name))
   (sr-speedbar-refresh)
-;  (switch-to-buffer-other-frame "*SPEEDBAR*")
+;;;(switch-to-buffer-other-frame "*SPEEDBAR*")
   (speedbar-find-selected-file current-file)
   (speedbar-expand-line))
+  ;;(speedbar-position-tag-from-defun)
+
 (add-hook 'speedbar-visiting-file-hook 'sb-expand-curren-file t)
 (add-hook 'speedbar-visiting-tag-hook 'sb-expand-curren-file t)
 
 (defun select-next-window ()
   (other-window 1))
+
 (add-hook 'speedbar-visiting-file-hook 'select-next-window t)
 (add-hook 'speedbar-visiting-tag-hook 'select-next-window t)
 
@@ -147,7 +151,7 @@
 (define-key global-map "\C-cl" 'org-store-link)
 (define-key global-map "\C-ca" 'org-agenda)
 (setq org-agenda-files (list
-			"~/github/hello/work.org"))
+            "~/github/hello/work.org"))
 (add-hook 'org-mode-hook
     (lambda () (setq truncate-lines nil)))
 (setq org-log-done t)
@@ -156,8 +160,7 @@
 
 (if (eq system-type 'gnu/linux)
     (set-default-font "文泉驿等宽正黑 14")
-    (set-fontset-font "fontset-default" 'unicode "文泉驿等宽正黑 20")
-    )
+  (set-fontset-font "fontset-default" 'unicode "文泉驿等宽正黑 20"))
 
 (if (eq system-type 'darwin)
     (set-default-font "Monaco 16")
@@ -174,8 +177,8 @@
 (setq c-default-style "linux"
       c-basic-offset 4)
 (setq-default c-basic-offset 4
-	      tab-width 4
-	      indent-tabs-mode nil)
+          tab-width 4
+          indent-tabs-mode nil)
 
 
 ; 窗口最大化
@@ -224,9 +227,12 @@
      cscope-find-this-file
      cscope-find-functions-calling-this-function
      cscope-find-global-definition-no-prompting
-     find-file-at-point
-     ))
+     find-file-at-point))
  '(jumplist-ex-mode t))
 
 (define-key evil-motion-state-map "\C-o" 'jumplist-previous)
 (define-key evil-motion-state-map "\C-i" 'jumplist-next)
+
+;; 自动折叠if语句
+(add-hook 'c-mode-hook 'hide-ifdef-mode)
+(setq hide-ifdef-initially t)
