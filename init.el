@@ -1,3 +1,5 @@
+;;; package --- Summary
+;;; Commentary:
 (require 'package)
   (push '("marmalade" . "https://mirrors.tuna.tsinghua.edu.cn/elpa/marmalade/")
     package-archives )
@@ -8,7 +10,7 @@
 ;finder+
 (require 'finder+)
 
-;模拟vi
+;;; Code:
 (global-unset-key (kbd "\C-b"))
 (global-unset-key (kbd "\C-f"))
 (global-set-key (kbd "\C-b") 'evil-scroll-page-up)
@@ -239,3 +241,8 @@
 ;; 自动折叠if语句
 (add-hook 'c-mode-hook 'hide-ifdef-mode)
 (setq hide-ifdef-initially t)
+
+;; check
+(add-hook 'after-init-hook #'global-flycheck-mode)
+
+;;; init.el ends here
