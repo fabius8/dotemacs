@@ -232,7 +232,9 @@
      find-file-at-point
      evil-goto-definition
      c-beginning-of-defun
-     c-end-of-defun))
+     c-end-of-defun
+     flycheck-next-error
+     flycheck-previous-error))
  '(jumplist-ex-mode t))
 
 (define-key evil-motion-state-map "\C-o" 'jumplist-previous)
@@ -244,5 +246,6 @@
 
 ;; check
 (add-hook 'after-init-hook #'global-flycheck-mode)
+(setq flycheck-clang-args "-isystem")
 
 ;;; init.el ends here
