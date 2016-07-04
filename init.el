@@ -46,6 +46,8 @@
 (linum-relative-mode 1)
 (setq linum-relative-current-symbol "")
 
+;; 显示列号
+(column-number-mode)
 ;git-gutter
 (global-git-gutter-mode +1)
 
