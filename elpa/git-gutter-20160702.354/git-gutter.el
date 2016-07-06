@@ -4,7 +4,7 @@
 
 ;; Author: Syohei YOSHIDA <syohex@gmail.com>
 ;; URL: https://github.com/syohex/emacs-git-gutter
-;; Package-Version: 20160610.852
+;; Package-Version: 20160702.354
 ;; Version: 0.89
 ;; Package-Requires: ((cl-lib "0.5") (emacs "24"))
 
@@ -168,6 +168,10 @@ gutter information of other windows."
 
 (defcustom git-gutter:ask-p t
   "Ask whether commit/revert or not"
+  :type 'boolean)
+
+(defcustom git-gutter:display-p t
+  "Display diff information or not."
   :type 'boolean)
 
 (cl-defstruct git-gutter-hunk
@@ -509,12 +513,13 @@ gutter information of other windows."
   (setq git-gutter:init-function 'git-gutter:linum-init
         git-gutter:view-diff-function nil)
   (defadvice linum-update-window (after git-gutter:linum-update-window activate)
-    (if (and git-gutter-mode git-gutter:diffinfos)
-        (git-gutter:linum-update git-gutter:diffinfos)
-      (let ((curwin (get-buffer-window))
-            (margin (or git-gutter:linum-prev-window-margin
-                        (car (window-margins)))))
-        (set-window-margins curwin margin (cdr (window-margins curwin)))))))
+    (when git-gutter:display-p
+      (if (and git-gutter-mode git-gutter:diffinfos)
+          (git-gutter:linum-update git-gutter:diffinfos)
+        (let ((curwin (get-buffer-window))
+              (margin (or git-gutter:linum-prev-window-margin
+                          (car (window-margins)))))
+          (set-window-margins curwin margin (cdr (window-margins curwin))))))))
 
 (defun git-gutter:show-backends ()
   (mapconcat (lambda (backend)
@@ -631,7 +636,7 @@ gutter information of other windows."
     (widen)
     (git-gutter:clear-gutter)
     (setq git-gutter:diffinfos diffinfos)
-    (when git-gutter:view-diff-function
+    (when (and git-gutter:display-p git-gutter:view-diff-function)
       (funcall git-gutter:view-diff-function diffinfos))))
 
 (defun git-gutter:search-near-diff-index (diffinfos is-reverse)
