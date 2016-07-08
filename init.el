@@ -111,8 +111,8 @@
 (which-key-mode)
 
 ;asciidoc
-;(require 'adoc-mode)
-;(add-to-list 'auto-mode-alist (cons "\\.adoc\\'" 'adoc-mode))
+(require 'adoc-mode)
+(add-to-list 'auto-mode-alist (cons "\\.adoc\\'" 'adoc-mode))
 
 ;blink
 (blink-cursor-mode -1)
@@ -243,7 +243,11 @@
 (define-key evil-motion-state-map "\C-i" 'jumplist-next)
 
 ;; 自动折叠if语句
-(add-hook 'c-mode-hook 'hide-ifdef-mode)
+(add-hook 'c-mode-hook
+          (lambda ()
+            (setq hide-ifdef-shadow t)
+            (hide-ifdef-mode)
+            (hide-ifdefs)))
 (setq hide-ifdef-initially t)
 
 ;; check
