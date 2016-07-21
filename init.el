@@ -254,4 +254,15 @@
 (add-hook 'after-init-hook #'global-flycheck-mode)
 (setq flycheck-clang-args "-isystem")
 
+;; 缩小放大窗口
+(global-set-key (kbd "S-C-<left>") 'shrink-window-horizontally)
+(global-set-key (kbd "S-C-<right>") 'enlarge-window-horizontally)
+
+;; smex混乱命令输入
+(require 'smex) ; Not needed if you use package.el
+(smex-initialize) ; Can be omitted. This might cause a (minimal) delay
+                  ; when Smex is auto-initialized on its first run.
+(global-set-key (kbd "M-x") 'smex)
+
+
 ;;; init.el ends here
