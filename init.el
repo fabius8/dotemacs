@@ -113,6 +113,8 @@
 ;asciidoc
 (require 'adoc-mode)
 (add-to-list 'auto-mode-alist (cons "\\.adoc\\'" 'adoc-mode))
+(add-hook 'adoc-mode-hook (lambda()
+                            (buffer-face-mode t)))
 
 ;blink
 (blink-cursor-mode -1)
@@ -265,5 +267,10 @@
                   ; when Smex is auto-initialized on its first run.
 (global-set-key (kbd "M-x") 'smex)
 
+;; markdown
+(autoload 'markdown-mode "markdown-mode"
+   "Major mode for editing Markdown files" t)
+(add-to-list 'auto-mode-alist '("\\.markdown\\'" . markdown-mode))
+(add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
 
 ;;; init.el ends here

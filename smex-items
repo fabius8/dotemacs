@@ -1,13 +1,13 @@
 
 ;; ----- smex-history -----
 (
- calendar
+ adoc-mode-menu
+ adoc-adjust-title-del
+ adoc-promote
+ markdown-preview
+ markdown-mode
  list-packages
- cal-china-x-birthday-from-chinese
- smex-describe-function
- shell-command
- arp
- cd
+ customize
 )
 
 ;; ----- smex-data -----
@@ -17,5 +17,12 @@
  (smex-describe-function . 1)
  (calendar . 2)
  (cal-china-x-birthday-from-chinese . 1)
- (list-packages . 1)
+ (list-packages . 4)
+ (adoc-mode . 5)
+ (adoc-mode-menu . 2)
+ (customize . 1)
+ (markdown-mode . 2)
+ (markdown-preview . 2)
+ (adoc-promote . 1)
+ (adoc-adjust-title-del . 1)
 )
