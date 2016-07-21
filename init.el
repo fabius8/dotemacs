@@ -163,8 +163,9 @@
   '((sequence "TODO" "FEEDBACK" "|" "DONE" "DELEGATED")))
 
 (if (eq system-type 'gnu/linux)
-    (set-default-font "文泉驿等宽正黑 14")
-  (set-fontset-font "fontset-default" 'unicode "文泉驿等宽正黑 20"))
+    (set-default-font "Mono 14")
+    (set-fontset-font "fontset-default" 'unicode "Mono 20")
+    )
 
 (if (eq system-type 'darwin)
     (set-default-font "Monaco 16")
