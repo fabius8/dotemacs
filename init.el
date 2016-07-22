@@ -266,9 +266,10 @@
 (global-set-key (kbd "M-x") 'smex)
 
 ;; linux, mate <-> command
-
 (if (eq system-type 'gnu/linux)
     (setq x-super-keysym 'meta)
+  )
+(if (eq system-type 'gnu/linux)
+  (global-unset-key (kbd "C-SPC"))
     )
-
 ;;; init.el ends here
