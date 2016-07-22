@@ -113,8 +113,6 @@
 ;asciidoc
 (require 'adoc-mode)
 (add-to-list 'auto-mode-alist (cons "\\.adoc\\'" 'adoc-mode))
-(add-hook 'adoc-mode-hook (lambda()
-                            (buffer-face-mode t)))
 
 ;blink
 (blink-cursor-mode -1)
@@ -153,7 +151,6 @@
 (setq org-src-preserve-indentation t)
 (setq org-src-fontify-natively t)
 (setq org-log-done t)
-(setq org-export-preserve-breaks t)
 (require 'org)
 (define-key global-map "\C-cl" 'org-store-link)
 (define-key global-map "\C-ca" 'org-agenda)
@@ -219,8 +216,8 @@
 (global-set-key (kbd "<f12>") 'bing-dict-brief)
 
 ; 透明背景(mac有用，centos上没用)
-(set-frame-parameter (selected-frame) 'alpha '(80 100))
-(add-to-list 'default-frame-alist '(alpha 80 100))
+;(set-frame-parameter (selected-frame) 'alpha '(80 100))
+;(add-to-list 'default-frame-alist '(alpha 80 100))
 
 ; 编码方式
 (prefer-coding-system 'gb2312)
@@ -268,10 +265,10 @@
                   ; when Smex is auto-initialized on its first run.
 (global-set-key (kbd "M-x") 'smex)
 
-;; markdown
-(autoload 'markdown-mode "markdown-mode"
-   "Major mode for editing Markdown files" t)
-(add-to-list 'auto-mode-alist '("\\.markdown\\'" . markdown-mode))
-(add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
+;; linux, mate <-> command
+
+(if (eq system-type 'gnu/linux)
+    (setq x-super-keysym 'meta)
+    )
 
 ;;; init.el ends here
