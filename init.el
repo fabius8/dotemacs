@@ -216,8 +216,22 @@
 (global-set-key (kbd "<f12>") 'bing-dict-brief)
 
 ; 透明背景(mac有用，centos上没用)
-;(set-frame-parameter (selected-frame) 'alpha '(80 100))
-;(add-to-list 'default-frame-alist '(alpha 80 100))
+(if (eq system-type 'darwin)
+    (set-frame-parameter (selected-frame) 'alpha '(80 100))
+)
+(if (eq system-type 'darwin)
+  (add-to-list 'default-frame-alist '(alpha 80 100))
+)
+
+;; linux 背景
+(if (eq system-type 'gnu/linux)
+    (set-frame-parameter (selected-frame) 'alpha '(90 100))
+)
+(if (eq system-type 'gnu/linux)
+  (add-to-list 'default-frame-alist '(alpha 90 100))
+)
+
+
 
 ; 编码方式
 (prefer-coding-system 'gb2312)
