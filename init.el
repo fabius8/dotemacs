@@ -153,6 +153,7 @@
 (setq org-src-preserve-indentation t)
 (setq org-src-fontify-natively t)
 (setq org-log-done t)
+(setq org-export-preserve-breaks t)
 (require 'org)
 (define-key global-map "\C-cl" 'org-store-link)
 (define-key global-map "\C-ca" 'org-agenda)

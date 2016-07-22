@@ -1,13 +1,13 @@
 
 ;; ----- smex-history -----
 (
+ describe-variable
+ org-html-export-to-html
+ org-html-export-as-html
+ org-preview-latex-fragment
+ org-info
  adoc-mode-menu
  adoc-adjust-title-del
- adoc-promote
- markdown-preview
- markdown-mode
- list-packages
- customize
 )
 
 ;; ----- smex-data -----
@@ -25,4 +25,9 @@
  (markdown-preview . 2)
  (adoc-promote . 1)
  (adoc-adjust-title-del . 1)
+ (describe-variable . 3)
+ (org-info . 1)
+ (org-preview-latex-fragment . 1)
+ (org-html-export-as-html . 3)
+ (org-html-export-to-html . 16)
 )
