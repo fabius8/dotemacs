@@ -170,7 +170,7 @@
 
 (if (eq system-type 'darwin)
     (set-default-font "Monaco 16")
-    (set-fontset-font "fontset-default" 'unicode "WenQuanYi Bitmap Song 16")
+    (set-fontset-font "fontset-default" 'unicode "Monaco 16")
  )
 
 (setq display-time-24hr-format t)
