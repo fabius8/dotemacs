@@ -148,6 +148,7 @@
 
 ; org-mode
 (setq org-export-with-sub-superscripts (quote {}))
+(setq org-export-preserve-breaks t)
 (setq org-src-preserve-indentation t)
 (setq org-src-fontify-natively t)
 (setq org-log-done t)
