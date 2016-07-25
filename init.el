@@ -165,12 +165,10 @@
 
 (if (eq system-type 'gnu/linux)
     (set-default-font "Mono 12")
-    (set-fontset-font "fontset-default" 'unicode "Mono 16")
     )
 
 (if (eq system-type 'darwin)
     (set-default-font "Monaco 16")
-    (set-fontset-font "fontset-default" 'unicode "Monaco 16")
  )
 
 (setq display-time-24hr-format t)
