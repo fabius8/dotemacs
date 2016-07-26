@@ -31,6 +31,9 @@
 (define-key evil-motion-state-map "\C-l" 'evil-window-right)
 (define-key evil-motion-state-map "\C-h" 'evil-window-left)
 
+(require 'whitespace)
+(setq-default whitespace-style '(tabs))
+(global-whitespace-mode)
 
 ;evil highlight
 ;(require 'evil-search-highlight-persist)
