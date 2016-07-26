@@ -209,6 +209,9 @@
 ;; (setq youdao-dictionary-use-chinese-word-segmentation t)
 ;; ===============有道词典配置====================
 
+;; projectile
+(projectile-global-mode)
+
 ; bing词典
 (require 'bing-dict)
 (global-set-key (kbd "C-c d") 'bing-dict-brief)
