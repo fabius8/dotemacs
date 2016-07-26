@@ -292,4 +292,24 @@
 (if (eq system-type 'gnu/linux)
   (global-unset-key (kbd "C-SPC"))
     )
+
+;; anzu
+(global-anzu-mode +1)
+
+;; complete-mode
+;; enable M-x complete-mode
+;; M-n M-p 选择上下
+
+;; fill-column-indicator
+(require 'fill-column-indicator)
+(setq-default fill-column 80)
+(add-hook 'c-mode-hook 'fci-mode)
+
+;; indent-guide: show vertical lines
+(indent-guide-mode)
+
+;; linum
+(setq linum-format " %4d ")
+(global-linum-mode 1)
+
 ;;; init.el ends here
