@@ -32,7 +32,9 @@
 (define-key evil-motion-state-map "\C-h" 'evil-window-left)
 
 (require 'whitespace)
-(setq-default whitespace-style '(tabs))
+;(setq whitespace-style '(face tabs spaces))
+
+(setq whitespace-style '(tabs trailing space-before-tab indentation empty space-after-tab tab-mark))
 (global-whitespace-mode)
 
 ;evil highlight
@@ -44,7 +46,7 @@
 (define-key Info-mode-map (kbd "b") nil)
 
 ;; relative-line-numbers-mode
-(global-relative-line-numbers-mode)
+;(global-relative-line-numbers-mode)
 
 ;; 显示列号
 (column-number-mode)
@@ -77,7 +79,7 @@
 (global-set-key (kbd "C-\\ s") 'cscope-find-this-symbol)
 (global-set-key (kbd "C-\\ d") 'cscope-find-global-definition)
 (global-set-key (kbd "C-\\ f") 'cscope-find-functions-calling-this-function)
-(setq cscope-close-window-after-select t)
+;(setq cscope-close-window-after-select t)
 ;(setq cscope-display-cscope-buffer t)
 ;(setq cscope-initial-directory "~/.emacs_autotags")
 
@@ -144,7 +146,6 @@
 ; 平滑滚屏
 (require 'smooth-scrolling)
 (smooth-scrolling-mode 1)
-(setq smooth-scroll-margin 2)
 
 ; org-mode
 (setq org-export-with-sub-superscripts (quote {}))
@@ -181,8 +182,9 @@
 (setq c-default-style "linux"
       c-basic-offset 4)
 (setq-default c-basic-offset 4
-          tab-width 4
-          indent-tabs-mode nil)
+              tab-width 4
+              ;;indent-tabs-mode nil
+          )
 
 
 ; 窗口最大化
@@ -190,7 +192,8 @@
     (toggle-frame-maximized)
 )
 ; 滚屏移动1行，不是中间
-;(setq scroll-step 1)
+(setq scroll-step            1
+      scroll-conservatively  10000)
 
 ;; ===============有道词典配置====================
 ;; Enable Cache
