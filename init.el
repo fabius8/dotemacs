@@ -40,6 +40,9 @@
 (define-key Info-mode-map (kbd "w") nil)
 (define-key Info-mode-map (kbd "b") nil)
 
+;; relative-line-numbers-mode
+(global-relative-line-numbers-mode)
+
 ;; 显示列号
 (column-number-mode)
 ;git-gutter
