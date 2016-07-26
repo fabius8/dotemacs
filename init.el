@@ -40,12 +40,6 @@
 (define-key Info-mode-map (kbd "w") nil)
 (define-key Info-mode-map (kbd "b") nil)
 
-;relative num
-(require 'linum-relative)
-(global-linum-mode 1)
-(linum-relative-mode 1)
-(setq linum-relative-current-symbol "")
-
 ;; 显示列号
 (column-number-mode)
 ;git-gutter
