@@ -146,7 +146,7 @@
 ; 平滑滚屏
 (require 'smooth-scrolling)
 (smooth-scrolling-mode 1)
-(setq smooth-scroll-margin 2)
+;(setq smooth-scroll-margin 2)
 
 ; org-mode
 (setq org-export-with-sub-superscripts (quote {}))
@@ -192,9 +192,9 @@
 (if (not (eq window-system 'nil))
     (toggle-frame-maximized)
 )
-; 滚屏移动1行，不是中间
-(setq scroll-step            1
-      scroll-conservatively  10000)
+;; 滚屏移动1行，不是中间
+;;(setq scroll-step            1
+;;      scroll-conservatively  10000)
 
 ;; ===============有道词典配置====================
 ;; Enable Cache
@@ -309,7 +309,7 @@
 (indent-guide-mode)
 
 ;; linum
-(setq linum-format " %4d ")
-(global-linum-mode 1)
+;;(setq linum-format " %4d ")
+;;(global-linum-mode 1)
 
 ;;; init.el ends here
