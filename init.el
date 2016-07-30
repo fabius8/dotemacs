@@ -176,16 +176,14 @@
 (setq display-time-24hr-format t)
 
 ; 自动对齐
-(defun set-newline-and-indent ()
-  (local-set-key (kbd "RET") 'newline-and-indent))
-(add-hook 'c-mode 'set-newline-and-indent)
-(setq-default c-basic-offset 4)
-(setq c-default-style "linux"
-      c-basic-offset 4)
-(setq-default c-basic-offset 4
-              tab-width 4
-              ;;indent-tabs-mode nil
-          )
+(defun my-c-mode ()
+  (local-set-key (kbd "RET") 'newline-and-indent)
+  (set-default tab-width 4)
+  (setq-default c-basic-offset 4)
+  (setq c-default-style "linux")
+  )
+(add-hook 'c-mode 'my-c-mode)
+;;(setq indent-tabs-mode nil)
 
 
 ; 窗口最大化
@@ -311,5 +309,13 @@
 ;; linum
 ;;(setq linum-format " %4d ")
 ;;(global-linum-mode 1)
+
+;; hied ^M
+(defun remove-dos-eol ()
+  "Do not show ^M in files containing mixed UNIX and DOS line endings."
+  (interactive)
+  (setq buffer-display-table (make-display-table))
+  (aset buffer-display-table ?\^M []))
+(add-hook 'c-mode-hook 'remove-dos-eol)
 
 ;;; init.el ends here
