@@ -10,18 +10,6 @@
 ;finder+
 (require 'finder+)
 
-;;; Code:
-;;(global-unset-key (kbd "\C-b"))
-;;(global-unset-key (kbd "\C-f"))
-;;(global-set-key (kbd "\C-b") 'evil-scroll-page-up)
-;;(global-set-key (kbd "\C-f") 'evil-scroll-page-down)
-;;(global-set-key (kbd "\C-x t") 'delete-trailing-whitespace)
-;(define-key package-menu-mode-map "h" nil)
-;(global-set-key (kbd "h") 'evil-backward-char)
-;(global-set-key (kbd "j") 'evil-next-line)
-;(global-set-key (kbd "l") 'evil-forward-char)
-;(global-set-key (kbd "k") 'evil-previous-line)
-
 ;evil
 (require 'evil)
   (evil-mode 1)
@@ -31,17 +19,16 @@
 (define-key evil-motion-state-map "\C-l" 'evil-window-right)
 (define-key evil-motion-state-map "\C-h" 'evil-window-left)
 
+;; 显示 tab 字符
 (require 'whitespace)
-;(setq whitespace-style '(face tabs spaces))
-
 (setq whitespace-style '(tabs trailing space-before-tab indentation empty space-after-tab tab-mark))
 (global-whitespace-mode)
 
-;evil highlight
-;(require 'evil-search-highlight-persist)
-;(global-evil-search-highlight-persist t)
+;;evil highlight
+;;(require 'evil-search-highlight-persist)
+;;(global-evil-search-highlight-persist t)
 
-;info
+;;info
 (define-key Info-mode-map (kbd "w") nil)
 (define-key Info-mode-map (kbd "b") nil)
 
@@ -50,6 +37,7 @@
 
 ;; 显示列号
 (column-number-mode)
+
 ;git-gutter
 (global-git-gutter-mode +1)
 
@@ -136,11 +124,15 @@
  ;; If there is more than one, they won't work right.
  '(default ((t (:family "文泉驿等宽正黑" :foundry "unknown" :slant normal :weight normal :height 120 :width normal)))))
 
+;; 去掉菜单栏
 (tool-bar-mode -1)
 (menu-bar-mode -1)
 
+;; 关闭自动保存
 (setq auto-save-default nil)
 (setq make-backup-files nil)
+
+;; 过长文件下一行显示
 (setq truncate-lines nil)
 
 ; 平滑滚屏
@@ -165,6 +157,7 @@
 (setq org-todo-keywords
   '((sequence "TODO" "FEEDBACK" "|" "DONE" "DELEGATED")))
 
+;; 设置字体
 (if (eq system-type 'gnu/linux)
     (set-default-font "Mono 12")
     )
@@ -173,9 +166,10 @@
     (set-default-font "Monaco 16")
  )
 
+;; 设置时间24小时
 (setq display-time-24hr-format t)
 
-; 自动对齐
+;; 自动对齐
 (defun set-newline-and-indent ()
   (local-set-key (kbd "RET") 'newline-and-indent))
 (add-hook 'c-mode 'set-newline-and-indent)
@@ -185,7 +179,7 @@
               tab-width 4
               indent-tabs-mode nil)
 
-
+;; c-mode 格式
 (defun set-my-c-mode ()
   (setq c-default-style "linux"
         c-basic-offset 4
@@ -196,15 +190,11 @@
 (add-hook 'c-mode-common-hook
           (lambda () (setq indent-tabs-mode t)))
 
-;(setq-default c-basic-offset 4
-;              tab-width 4
-;              indent-tabs-mode nil
-;          )
-
-; 窗口最大化
+;; 窗口最大化
 (if (not (eq window-system 'nil))
     (toggle-frame-maximized)
 )
+
 ;; 滚屏移动1行，不是中间
 ;;(setq scroll-step            1
 ;;      scroll-conservatively  10000)
@@ -234,7 +224,7 @@
 (global-set-key (kbd "C-c d") 'bing-dict-brief)
 (global-set-key (kbd "<f12>") 'bing-dict-brief)
 
-; 透明背景(mac有用，centos上没用)
+; 透明背景(mac有用，centos上没用, ubuntu 下有用)
 (if (eq system-type 'darwin)
     (set-frame-parameter (selected-frame) 'alpha '(80 100))
 )
@@ -284,13 +274,15 @@
             (hide-ifdefs)))
 (setq hide-ifdef-initially t)
 
-;; check
+;; 语法检查包含头文件
 (add-hook 'after-init-hook #'global-flycheck-mode)
 (setq flycheck-clang-args "-isystem")
 
 ;; 缩小放大窗口
 (global-set-key (kbd "S-C-<left>") 'shrink-window-horizontally)
 (global-set-key (kbd "S-C-<right>") 'enlarge-window-horizontally)
+(global-set-key (kbd "S-C-<up>") 'enlarge-window)
+(global-set-key (kbd "S-C-<down>") 'shrink-window)
 
 ;; smex混乱命令输入
 (require 'smex) ; Not needed if you use package.el
@@ -302,11 +294,12 @@
 (if (eq system-type 'gnu/linux)
     (setq x-super-keysym 'meta))
 
-(if (eq system-type 'gnu/linux)
-    (global-unset-key (kbd "C-SPC")))
-
+;; mac 下 option 作为 meta 键
 (setq mac-option-modifier 'meta)
 (setq mac-command-modifier 'nil)
+
+(if (eq system-type 'gnu/linux)
+    (global-unset-key (kbd "C-SPC")))
 
 ;; anzu
 (global-anzu-mode +1)
@@ -315,7 +308,7 @@
 ;; enable M-x complete-mode
 ;; M-n M-p 选择上下
 
-;; fill-column-indicator
+;; c 语言一航最多80个字符
 (require 'fill-column-indicator)
 (setq-default fill-column 80)
 (add-hook 'c-mode-hook 'fci-mode)
