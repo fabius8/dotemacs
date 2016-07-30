@@ -300,11 +300,10 @@
 
 ;; linux, mate <-> command
 (if (eq system-type 'gnu/linux)
-    (setq x-super-keysym 'meta)
-  )
+    (setq x-super-keysym 'meta))
+
 (if (eq system-type 'gnu/linux)
-  (global-unset-key (kbd "C-SPC"))
-    )
+    (global-unset-key (kbd "C-SPC")))
 
 ;; anzu
 (global-anzu-mode +1)
