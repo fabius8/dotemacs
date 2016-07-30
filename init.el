@@ -176,15 +176,22 @@
 (setq display-time-24hr-format t)
 
 ; 自动对齐
-(defun my-c-mode ()
-  (local-set-key (kbd "RET") 'newline-and-indent)
-  (set-default tab-width 4)
-  (setq-default c-basic-offset 4)
-  (setq c-default-style "linux")
-  )
-(add-hook 'c-mode 'my-c-mode)
-;;(setq indent-tabs-mode nil)
+(defun set-newline-and-indent ()
+  (local-set-key (kbd "RET") 'newline-and-indent))
+(add-hook 'c-mode 'set-newline-and-indent)
 
+(defun set-my-c-mode ()
+(setq c-default-style "linux"
+      c-basic-offset 4
+indent-tabs-mode t
+tab-width 4)
+)
+(add-hook 'c-mode 'set-my-c-mode)
+
+;(setq-default c-basic-offset 4
+;              tab-width 4
+;              indent-tabs-mode nil
+;          )
 
 ; 窗口最大化
 (if (not (eq window-system 'nil))
@@ -304,7 +311,6 @@
 (add-hook 'c-mode-hook 'fci-mode)
 
 ;; indent-guide: show vertical lines
-(indent-guide-mode)
 
 ;; linum
 ;;(setq linum-format " %4d ")
