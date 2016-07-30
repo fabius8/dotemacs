@@ -180,13 +180,21 @@
   (local-set-key (kbd "RET") 'newline-and-indent))
 (add-hook 'c-mode 'set-newline-and-indent)
 
+;; 默认tab长度
+(setq-default c-basic-offset 4
+              tab-width 4
+              indent-tabs-mode nil)
+
+
 (defun set-my-c-mode ()
-(setq c-default-style "linux"
-      c-basic-offset 4
-indent-tabs-mode t
-tab-width 4)
-)
+  (setq c-default-style "linux"
+        c-basic-offset 4
+        indent-tabs-mode t
+        tab-width 4)
+  )
 (add-hook 'c-mode 'set-my-c-mode)
+(add-hook 'c-mode-common-hook
+          (lambda () (setq indent-tabs-mode t)))
 
 ;(setq-default c-basic-offset 4
 ;              tab-width 4
@@ -309,8 +317,6 @@ tab-width 4)
 (require 'fill-column-indicator)
 (setq-default fill-column 80)
 (add-hook 'c-mode-hook 'fci-mode)
-
-;; indent-guide: show vertical lines
 
 ;; linum
 ;;(setq linum-format " %4d ")
