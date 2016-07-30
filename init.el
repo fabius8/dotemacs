@@ -11,11 +11,11 @@
 (require 'finder+)
 
 ;;; Code:
-(global-unset-key (kbd "\C-b"))
-(global-unset-key (kbd "\C-f"))
-(global-set-key (kbd "\C-b") 'evil-scroll-page-up)
-(global-set-key (kbd "\C-f") 'evil-scroll-page-down)
-(global-set-key (kbd "\C-x t") 'delete-trailing-whitespace)
+;;(global-unset-key (kbd "\C-b"))
+;;(global-unset-key (kbd "\C-f"))
+;;(global-set-key (kbd "\C-b") 'evil-scroll-page-up)
+;;(global-set-key (kbd "\C-f") 'evil-scroll-page-down)
+;;(global-set-key (kbd "\C-x t") 'delete-trailing-whitespace)
 ;(define-key package-menu-mode-map "h" nil)
 ;(global-set-key (kbd "h") 'evil-backward-char)
 ;(global-set-key (kbd "j") 'evil-next-line)
@@ -305,6 +305,9 @@
 (if (eq system-type 'gnu/linux)
     (global-unset-key (kbd "C-SPC")))
 
+(setq mac-option-modifier 'meta)
+(setq mac-command-modifier 'nil)
+
 ;; anzu
 (global-anzu-mode +1)
 
@@ -328,5 +331,19 @@
   (setq buffer-display-table (make-display-table))
   (aset buffer-display-table ?\^M []))
 (add-hook 'c-mode-hook 'remove-dos-eol)
+
+;; insert-state to emacs-state
+; redefine emacs state to intercept the escape key like insert-state does:
+(evil-define-state emacs
+  "Emacs state that can be exited with the escape key."
+  :tag " <EE> "
+  :message "-- EMACS WITH ESCAPE --"
+  :input-method t
+  ;; :intercept-esc nil)
+  )
+
+(defadvice evil-insert-state (around emacs-state-instead-of-insert-state activate)
+  (evil-emacs-state))
+(define-key evil-emacs-state-map [escape] 'evil-normal-state)
 
 ;;; init.el ends here
