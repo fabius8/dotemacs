@@ -18,9 +18,13 @@
 (define-key evil-motion-state-map "\C-k" 'evil-window-up)
 (define-key evil-motion-state-map "\C-l" 'evil-window-right)
 (define-key evil-motion-state-map "\C-h" 'evil-window-left)
+(define-key evil-insert-state-map "\C-n" 'next-line)
+(define-key evil-insert-state-map "\C-p" 'previous-line)
+(define-key evil-insert-state-map "\C-v" 'scroll-up-command)
 ;;(define-key evil-emacs-state-map [escape] 'evil-exit-emacs-state)
 ;;(defalias 'evil-insert-state 'evil-emacs-state)
 ;;(fset 'evil-insert-state 'evil-emacs-state)
+
 
 ;; 显示 tab 字符
 (require 'whitespace)
