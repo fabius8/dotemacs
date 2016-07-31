@@ -18,6 +18,9 @@
 (define-key evil-motion-state-map "\C-k" 'evil-window-up)
 (define-key evil-motion-state-map "\C-l" 'evil-window-right)
 (define-key evil-motion-state-map "\C-h" 'evil-window-left)
+;;(define-key evil-emacs-state-map [escape] 'evil-exit-emacs-state)
+;;(defalias 'evil-insert-state 'evil-emacs-state)
+;;(fset 'evil-insert-state 'evil-emacs-state)
 
 ;; 显示 tab 字符
 (require 'whitespace)
@@ -325,18 +328,19 @@
   (aset buffer-display-table ?\^M []))
 (add-hook 'c-mode-hook 'remove-dos-eol)
 
-;; insert-state to emacs-state
-; redefine emacs state to intercept the escape key like insert-state does:
-(evil-define-state emacs
-  "Emacs state that can be exited with the escape key."
-  :tag " <EE> "
-  :message "-- EMACS WITH ESCAPE --"
-  :input-method t
-  ;; :intercept-esc nil)
-  )
+;insert-state to emacs-state
+;redefine emacs state to intercept the escape key like insert-state does:
 
-(defadvice evil-insert-state (around emacs-state-instead-of-insert-state activate)
-  (evil-emacs-state))
-(define-key evil-emacs-state-map [escape] 'evil-normal-state)
+;; (evil-define-state emacs
+;;   "Emacs state that can be exited with the escape key."
+;;   :tag " <EE> "
+;;   :message "-- EMACS WITH ESCAPE --"
+;;   :input-method t
+;;   ;; :intercept-esc nil)
+;;   )
+
+;; (defadvice evil-insert-state (around emacs-state-instead-of-insert-state activate)
+;;   (evil-emacs-state))
+;; (define-key evil-emacs-state-map [escape] 'evil-exit-emacs-state)
 
 ;;; init.el ends here
