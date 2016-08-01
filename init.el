@@ -65,6 +65,9 @@
 (setq recentf-max-menu-items 30)
 (global-set-key "\C-x\ \C-r" 'recentf-open-files)
 
+;; dired-mode
+;;(add-hook 'dired-mode-hook (lambda () (evil-emacs-state)))
+
 ;cscope
 (require 'xcscope)
 (global-unset-key (kbd "\C-]"))
@@ -77,6 +80,7 @@
 ;(setq cscope-close-window-after-select t)
 ;(setq cscope-display-cscope-buffer t)
 ;(setq cscope-initial-directory "~/.emacs_autotags")
+(add-hook 'cscope-list-entry-hook 'evil-emacs-state)
 
 ;; sr-speedbar 查看c代码定义
 (require 'sr-speedbar)
@@ -288,8 +292,8 @@
 ;; 缩小放大窗口
 (global-set-key (kbd "S-C-<left>") 'shrink-window-horizontally)
 (global-set-key (kbd "S-C-<right>") 'enlarge-window-horizontally)
-(global-set-key (kbd "S-C-<up>") 'enlarge-window)
-(global-set-key (kbd "S-C-<down>") 'shrink-window)
+(global-set-key (kbd "M-C-<up>") 'enlarge-window)
+(global-set-key (kbd "M-C-<down>") 'shrink-window)
 
 ;; smex混乱命令输入
 (require 'smex) ; Not needed if you use package.el
