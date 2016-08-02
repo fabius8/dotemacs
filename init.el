@@ -133,6 +133,13 @@
  '(ansi-color-faces-vector
    [default default default italic underline success warning error])
  '(custom-enabled-themes (quote (tango-dark)))
+ '(jumplist-ex-mode t)
+ '(jumplist-hook-commands
+   (quote
+    (dired-jump isearch-forward cscope-find-this-symbol cscope-find-this-file cscope-find-functions-calling-this-function cscope-find-global-definition-no-prompting find-file-at-point evil-goto-definition c-beginning-of-defun c-end-of-defun flycheck-next-error flycheck-previous-error)))
+ '(package-selected-packages
+   (quote
+    (popwin youdao-dictionary xcscope which-key sr-speedbar smooth-scrolling smex relative-line-numbers projectile markdown-mode magit jumplist gtags git-gutter flycheck finder+ fill-column-indicator f evil company cal-china-x bing-dict auto-complete anzu adoc-mode)))
  '(send-mail-function nil)
  '(show-trailing-whitespace t))
 (custom-set-faces
@@ -265,21 +272,7 @@
 (prefer-coding-system 'utf-8)
 
 (require 'jumplist)
-(custom-set-variables
- '(jumplist-hook-commands
-   '(dired-jump
-     isearch-forward
-     cscope-find-this-symbol
-     cscope-find-this-file
-     cscope-find-functions-calling-this-function
-     cscope-find-global-definition-no-prompting
-     find-file-at-point
-     evil-goto-definition
-     c-beginning-of-defun
-     c-end-of-defun
-     flycheck-next-error
-     flycheck-previous-error))
- '(jumplist-ex-mode t))
+
 
 (define-key evil-motion-state-map "\C-o" 'jumplist-previous)
 (define-key evil-motion-state-map "\C-i" 'jumplist-next)
@@ -357,5 +350,9 @@
 ;; (defadvice evil-insert-state (around emacs-state-instead-of-insert-state activate)
 ;;   (evil-emacs-state))
 ;; (define-key evil-emacs-state-map [escape] 'evil-exit-emacs-state)
+
+;; pop-windows
+(require 'popwin)
+(popwin-mode 1)
 
 ;;; init.el ends here
