@@ -85,6 +85,10 @@
 (define-key cscope-list-entry-keymap "j" 'nil)
 (define-key cscope-list-entry-keymap "k" 'nil)
 
+;; git-gutter quick find next and previous
+(global-set-key (kbd "C-, n") 'git-gutter:next-hunk)
+(global-set-key (kbd "C-, p") 'git-gutter:previous-hunk)
+
 ;; sr-speedbar 查看c代码定义
 (require 'sr-speedbar)
 (setq speedbar-tag-hierarchy-method nil)
