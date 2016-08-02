@@ -173,7 +173,7 @@
 
 ;; 设置字体
 (if (eq system-type 'gnu/linux)
-    (set-default-font "Mono 12")
+    (set-default-font "Mono 13")
     )
 
 (if (eq system-type 'darwin)
