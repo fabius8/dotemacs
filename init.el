@@ -143,7 +143,7 @@
     (dired-jump isearch-forward cscope-find-this-symbol cscope-find-this-file cscope-find-functions-calling-this-function cscope-find-global-definition-no-prompting find-file-at-point evil-goto-definition c-beginning-of-defun c-end-of-defun flycheck-next-error flycheck-previous-error)))
  '(package-selected-packages
    (quote
-    (popwin youdao-dictionary xcscope which-key sr-speedbar smooth-scrolling smex relative-line-numbers projectile markdown-mode magit jumplist gtags git-gutter flycheck finder+ fill-column-indicator f evil company cal-china-x bing-dict auto-complete anzu adoc-mode)))
+    (powerline popwin youdao-dictionary xcscope which-key sr-speedbar smooth-scrolling smex relative-line-numbers projectile markdown-mode magit jumplist gtags git-gutter flycheck finder+ fill-column-indicator f evil company cal-china-x bing-dict auto-complete anzu adoc-mode)))
  '(send-mail-function nil)
  '(show-trailing-whitespace t))
 (custom-set-faces
@@ -278,7 +278,7 @@
 (require 'jumplist)
 
 
-(define-key evil-motion-state-map "\C-o" 'jumplist-previous)
+(define-key evil-motion-state-map "\C-o" 'jdefaultumplist-previous)
 (define-key evil-motion-state-map "\C-i" 'jumplist-next)
 
 ;; 自动折叠if语句
