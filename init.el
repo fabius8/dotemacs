@@ -78,9 +78,12 @@
 (global-set-key (kbd "C-\\ d") 'cscope-find-global-definition)
 (global-set-key (kbd "C-\\ f") 'cscope-find-functions-calling-this-function)
 ;(setq cscope-close-window-after-select t)
-;(setq cscope-display-cscope-buffer t)
+(setq cscope-display-cscope-buffer t)
 ;(setq cscope-initial-directory "~/.emacs_autotags")
 (add-hook 'cscope-list-entry-hook 'evil-emacs-state)
+(define-key cscope-list-entry-keymap "q" 'kill-buffer-and-window)
+(define-key cscope-list-entry-keymap "j" 'nil)
+(define-key cscope-list-entry-keymap "k" 'nil)
 
 ;; sr-speedbar 查看c代码定义
 (require 'sr-speedbar)
