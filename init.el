@@ -7,6 +7,10 @@
     package-archives)
   (package-initialize)
 
+;; 去除 warning, TODO
+(if (eq system-type 'darwin)
+    (setq warning-minimum-level :emergency))
+
 ;finder+
 (require 'finder+)
 
