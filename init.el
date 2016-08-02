@@ -14,6 +14,10 @@
 ;finder+
 (require 'finder+)
 
+;; beacon
+(beacon-mode 1)
+(setq beacon-blink-duration 1)
+
 ;evil
 (require 'evil)
   (evil-mode 1)
