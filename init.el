@@ -305,8 +305,8 @@
 (global-set-key (kbd "M-x") 'smex)
 
 ;; linux, mate <-> command
-(if (eq system-type 'gnu/linux)
-    (setq x-super-keysym 'meta))
+;;(if (eq system-type 'gnu/linux)
+;;    (setq x-super-keysym 'meta))
 
 ;; mac 下 option 作为 meta 键
 (setq mac-option-modifier 'meta)
