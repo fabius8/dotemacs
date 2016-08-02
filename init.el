@@ -153,9 +153,9 @@
 ;; 过长文件下一行显示
 (setq truncate-lines nil)
 
-; 平滑滚屏
-(require 'smooth-scrolling)
-(smooth-scrolling-mode 1)
+;; 平滑滚屏
+;;(require 'smooth-scrolling)
+;;(smooth-scrolling-mode 1)
 ;(setq smooth-scroll-margin 2)
 
 ; org-mode
