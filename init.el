@@ -141,13 +141,9 @@
  '(ansi-color-faces-vector
    [default default default italic underline success warning error])
  '(custom-enabled-themes (quote (tango-dark)))
- '(jumplist-ex-mode t)
- '(jumplist-hook-commands
-   (quote
-    (dired-jump isearch-forward cscope-find-this-symbol cscope-find-this-file cscope-find-functions-calling-this-function cscope-find-global-definition-no-prompting find-file-at-point evil-goto-definition c-beginning-of-defun c-end-of-defun )))
  '(package-selected-packages
    (quote
-    (powerline popwin youdao-dictionary xcscope which-key sr-speedbar smooth-scrolling smex relative-line-numbers projectile markdown-mode magit jumplist gtags git-gutter  finder+ fill-column-indicator f evil company cal-china-x bing-dict auto-complete anzu adoc-mode)))
+    (powerline popwin youdao-dictionary xcscope which-key sr-speedbar smooth-scrolling smex relative-line-numbers projectile markdown-mode magit gtags git-gutter  finder+ fill-column-indicator f evil company cal-china-x bing-dict auto-complete anzu adoc-mode)))
  '(send-mail-function nil)
  '(show-trailing-whitespace t))
 (custom-set-faces
@@ -273,17 +269,12 @@
   (add-to-list 'default-frame-alist '(alpha 90 100))
 )
 
-
-
 ; 编码方式
 (prefer-coding-system 'gb2312)
 (prefer-coding-system 'utf-8)
 
-(require 'jumplist)
-
-
-(define-key evil-motion-state-map "\C-o" 'jdefaultumplist-previous)
-(define-key evil-motion-state-map "\C-i" 'jumplist-next)
+;(define-key evil-motion-state-map "\C-o" 'jdefaultumplist-previous)
+;(define-key evil-motion-state-map "\C-i" 'jumplist-next)
 
 ;; 自动折叠if语句
 (add-hook 'c-mode-hook
@@ -323,40 +314,9 @@
 ;; anzu
 (global-anzu-mode +1)
 
-;; complete-mode
-;; enable M-x complete-mode
-;; M-n M-p 选择上下
-
 ;; c 语言一航最多80个字符
 (require 'fill-column-indicator)
 (setq-default fill-column 80)
 (add-hook 'c-mode-hook 'fci-mode)
-
-;; linum
-;;(setq linum-format " %4d ")
-;;(global-linum-mode 1)
-
-;; hied ^M
-;; (defun remove-dos-eol ()
-;;   "Do not show ^M in files containing mixed UNIX and DOS line endings."
-;;   (interactive)
-;;   (setq buffer-display-table (make-display-table))
-;;   (aset buffer-display-table ?\^M []))
-;; (add-hook 'c-mode-hook 'remove-dos-eol)
-
-;insert-state to emacs-state
-;redefine emacs state to intercept the escape key like insert-state does:
-
-;; (evil-define-state emacs
-;;   "Emacs state that can be exited with the escape key."
-;;   :tag " <EE> "
-;;   :message "-- EMACS WITH ESCAPE --"
-;;   :input-method t
-;;   ;; :intercept-esc nil)
-;;   )
-
-;; (defadvice evil-insert-state (around emacs-state-instead-of-insert-state activate)
-;;   (evil-emacs-state))
-;; (define-key evil-emacs-state-map [escape] 'evil-exit-emacs-state)
 
 ;;; init.el ends here
