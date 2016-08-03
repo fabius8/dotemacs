@@ -143,7 +143,7 @@
  '(custom-enabled-themes (quote (tango-dark)))
  '(package-selected-packages
    (quote
-    (powerline popwin youdao-dictionary xcscope which-key sr-speedbar smooth-scrolling smex relative-line-numbers projectile markdown-mode magit gtags git-gutter  finder+ fill-column-indicator f evil company cal-china-x bing-dict auto-complete anzu adoc-mode)))
+    (powerline popwin youdao-dictionary xcscope which-key sr-speedbar smex relative-line-numbers projectile markdown-mode magit gtags git-gutter finder+ fill-column-indicator f evil company cal-china-x bing-dict auto-complete anzu adoc-mode)))
  '(send-mail-function nil)
  '(show-trailing-whitespace t))
 (custom-set-faces
@@ -318,5 +318,8 @@
 (require 'fill-column-indicator)
 (setq-default fill-column 80)
 (add-hook 'c-mode-hook 'fci-mode)
+
+;; mgit
+(require 'magit)
 
 ;;; init.el ends here
