@@ -144,10 +144,10 @@
  '(jumplist-ex-mode t)
  '(jumplist-hook-commands
    (quote
-    (dired-jump isearch-forward cscope-find-this-symbol cscope-find-this-file cscope-find-functions-calling-this-function cscope-find-global-definition-no-prompting find-file-at-point evil-goto-definition c-beginning-of-defun c-end-of-defun flycheck-next-error flycheck-previous-error)))
+    (dired-jump isearch-forward cscope-find-this-symbol cscope-find-this-file cscope-find-functions-calling-this-function cscope-find-global-definition-no-prompting find-file-at-point evil-goto-definition c-beginning-of-defun c-end-of-defun )))
  '(package-selected-packages
    (quote
-    (powerline popwin youdao-dictionary xcscope which-key sr-speedbar smooth-scrolling smex relative-line-numbers projectile markdown-mode magit jumplist gtags git-gutter flycheck finder+ fill-column-indicator f evil company cal-china-x bing-dict auto-complete anzu adoc-mode)))
+    (powerline popwin youdao-dictionary xcscope which-key sr-speedbar smooth-scrolling smex relative-line-numbers projectile markdown-mode magit jumplist gtags git-gutter  finder+ fill-column-indicator f evil company cal-china-x bing-dict auto-complete anzu adoc-mode)))
  '(send-mail-function nil)
  '(show-trailing-whitespace t))
 (custom-set-faces
@@ -294,8 +294,8 @@
 (setq hide-ifdef-initially t)
 
 ;; 语法检查包含头文件
-(add-hook 'after-init-hook #'global-flycheck-mode)
-(setq flycheck-clang-args "-isystem")
+;;(add-hook 'after-init-hook #'global-flycheck-mode)
+;;(setq flycheck-clang-args "-isystem")
 
 ;; 缩小放大窗口
 (global-set-key (kbd "S-C-<left>") 'shrink-window-horizontally)
