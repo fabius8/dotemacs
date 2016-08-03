@@ -676,7 +676,7 @@
 		((:url . "http://elpa.gnu.org/packages/rainbow-mode.html")
 		 (:keywords "faces"))])
  (realgud .
-	  [(1 4 2)
+	  [(1 4 3)
 	   ((load-relative
 	     (1 2))
 	    (loc-changes

@@ -359,8 +359,4 @@
 ;;   (evil-emacs-state))
 ;; (define-key evil-emacs-state-map [escape] 'evil-exit-emacs-state)
 
-;; pop-windows
-(require 'popwin)
-(popwin-mode 1)
-
 ;;; init.el ends here
