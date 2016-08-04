@@ -18,6 +18,9 @@
 (beacon-mode 1)
 (setq beacon-blink-duration 1)
 
+;; mgit
+(require 'magit)
+
 ;evil
 (require 'evil)
   (evil-mode 1)
@@ -318,8 +321,5 @@
 (require 'fill-column-indicator)
 (setq-default fill-column 80)
 (add-hook 'c-mode-hook 'fci-mode)
-
-;; mgit
-(require 'magit)
 
 ;;; init.el ends here
