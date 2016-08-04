@@ -33,6 +33,8 @@
 (define-key evil-insert-state-map "\C-n" 'next-line)
 (define-key evil-insert-state-map "\C-p" 'previous-line)
 (define-key evil-insert-state-map "\C-v" 'scroll-up-command)
+
+(define-key evil-motion-state-map (kbd "TAB") 'org-cycle)
 ;;(define-key evil-emacs-state-map [escape] 'evil-exit-emacs-state)
 ;;(defalias 'evil-insert-state 'evil-emacs-state)
 ;;(fset 'evil-insert-state 'evil-emacs-state)
