@@ -250,6 +250,11 @@
 	   "Highlight uncommitted changes using VC" tar
 	   ((:keywords "vc" "diff")
 	    (:url . "https://github.com/dgutov/diff-hl"))])
+ (diffview .
+	   [(1 0)
+	    nil "View diffs in side-by-side format" single
+	    ((:url . "https://github.com/mgalgs/diffview-mode")
+	     (:keywords "convenience" "diff"))])
  (dismal .
 	 [(1 5)
 	  ((cl-lib
