@@ -16,7 +16,8 @@
 
 ;; beacon
 (beacon-mode 1)
-(setq beacon-blink-duration 1)
+;(setq beacon-blink-duration 0.5)
+(setq beacon-blink-delay 1)
 
 ;; mgit
 (require 'magit)
