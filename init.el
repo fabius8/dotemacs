@@ -38,6 +38,7 @@
 ;;(define-key evil-emacs-state-map [escape] 'evil-exit-emacs-state)
 ;;(defalias 'evil-insert-state 'evil-emacs-state)
 ;;(fset 'evil-insert-state 'evil-emacs-state)
+(define-key evil-motion-state-map "\C-i" 'evil-jump-forward)
 
 
 ;; 显示 tab 字符
@@ -84,6 +85,7 @@
 
 ;cscope
 (require 'xcscope)
+;;(setq cscope-program "gtags-cscope")
 (global-unset-key (kbd "\C-]"))
 (global-unset-key (kbd "\C-\\"))
 (global-set-key (kbd "\C-]") 'cscope-find-global-definition-no-prompting)
@@ -188,6 +190,8 @@
             "~/github/hello/work.org"))
 (add-hook 'org-mode-hook
     (lambda () (setq truncate-lines nil)))
+(add-hook 'org-mode-hook
+    (lambda () (auto-complete-mode 1)))
 (setq org-log-done t)
 (setq org-todo-keywords
   '((sequence "TODO" "FEEDBACK" "|" "DONE" "DELEGATED")))
