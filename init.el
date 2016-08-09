@@ -194,7 +194,10 @@
 (setq org-log-done t)
 (setq org-todo-keywords
   '((sequence "TODO" "FEEDBACK" "|" "DONE" "DELEGATED")))
-(define-key evil-motion-state-map (kbd "TAB") 'org-cycle)
+
+(add-hook 'org-mode-hook
+    (lambda () (define-key evil-motion-state-map (kbd "TAB") 'org-cycle)))
+;;(define-key evil-motion-state-map (kbd "TAB") 'org-cycle)
 
 ;; 设置字体
 (if (eq system-type 'gnu/linux)
