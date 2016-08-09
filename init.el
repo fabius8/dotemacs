@@ -34,7 +34,6 @@
 (define-key evil-insert-state-map "\C-p" 'previous-line)
 (define-key evil-insert-state-map "\C-v" 'scroll-up-command)
 
-(define-key evil-motion-state-map (kbd "TAB") 'org-cycle)
 ;;(define-key evil-emacs-state-map [escape] 'evil-exit-emacs-state)
 ;;(defalias 'evil-insert-state 'evil-emacs-state)
 ;;(fset 'evil-insert-state 'evil-emacs-state)
@@ -195,6 +194,7 @@
 (setq org-log-done t)
 (setq org-todo-keywords
   '((sequence "TODO" "FEEDBACK" "|" "DONE" "DELEGATED")))
+(define-key evil-motion-state-map (kbd "TAB") 'org-cycle)
 
 ;; 设置字体
 (if (eq system-type 'gnu/linux)
