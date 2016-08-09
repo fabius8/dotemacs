@@ -20,7 +20,7 @@
 (setq beacon-blink-delay 1)
 
 ;; mgit
-(require 'magit)
+;;(require 'magit)
 
 ;evil
 (require 'evil)
