@@ -336,4 +336,9 @@
           (lambda ()
             (when (derived-mode-p 'c-mode 'c++-mode 'java-mode)
               (ggtags-mode 1))))
+
+;; highlight paren
+(require 'highlight-parentheses)
+(add-hook 'c-mode-hook 'highlight-parentheses-mode)
+
 ;;; init.el ends here
