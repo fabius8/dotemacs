@@ -340,4 +340,7 @@
 (require 'highlight-parentheses)
 (add-hook 'c-mode-hook 'highlight-parentheses-mode)
 
+;; highlight symbol
+(global-set-key (kbd "\C-x w .") 'highlight-symbol-at-point)
+
 ;;; init.el ends here
