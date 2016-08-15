@@ -8,8 +8,7 @@
   (package-initialize)
 
 ;; 去除 warning, TODO
-(if (eq system-type 'darwin)
-    (setq warning-minimum-level :emergency))
+(setq warning-minimum-level :emergency)
 
 ;finder+
 (require 'finder+)
@@ -108,18 +107,18 @@
 (require 'sr-speedbar)
 (setq speedbar-tag-hierarchy-method nil)
 
-(defun sb-expand-curren-file ()
-  "Expand current file in speedbar buffer"
-  (interactive)
-  (setq current-file (buffer-file-name))
-  (sr-speedbar-refresh)
-;;;(switch-to-buffer-other-frame "*SPEEDBAR*")
-  (speedbar-find-selected-file current-file)
-  (speedbar-expand-line))
-  ;;(speedbar-position-tag-from-defun)
+;; (defun sb-expand-curren-file ()
+;;   "Expand current file in speedbar buffer"
+;;   (interactive)
+;;   (setq current-file (buffer-file-name))
+;;   (sr-speedbar-refresh)
+;;   (switch-to-buffer-other-frame "*SPEEDBAR*")
+;;   (speedbar-find-selected-file current-file)
+;;   (speedbar-expand-line))
+;;   ;;(speedbar-position-tag-from-defun)
 
-(add-hook 'speedbar-visiting-file-hook 'sb-expand-curren-file t)
-(add-hook 'speedbar-visiting-tag-hook 'sb-expand-curren-file t)
+;; (add-hook 'speedbar-visiting-file-hook 'sb-expand-curren-file t)
+;; (add-hook 'speedbar-visiting-tag-hook 'sb-expand-curren-file t)
 
 (defun select-next-window ()
   (other-window 1))
