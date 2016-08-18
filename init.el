@@ -13,7 +13,7 @@
 (require 'package)
 (setq package-archives '(("elpa" . "http://tromey.com/elpa/")
                          ("gnu" . "http://elpa.gnu.org/packages/")
-                         ("melpa" . "http://melpa.org/packages/")
+                         ("melpa" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/melpa/")
                          ("marmalade" . "http://marmalade-repo.org/packages/")))
 (package-initialize)
 
@@ -110,6 +110,7 @@
 (global-set-key "\C-x\ \C-r" #'helm-recentf)
 (global-set-key "\C-x\ \C-f" #'helm-find-files)
 (global-set-key (kbd "C-x r b") #'helm-filtered-bookmarks)
+(global-set-key (kbd "C-x C-b") #'helm-buffers-list)
 (global-set-key (kbd "M-x") #'helm-M-x)
 (setq helm-mode-fuzzy-match 1)
 (setq helm-M-x-fuzzy-match 1)
@@ -121,7 +122,11 @@
 (column-number-mode)
 
 ;git-gutter
-(global-git-gutter-mode +1)
+(global-git-gutter-mode 1)
+;; git-gutter quick find next and previous
+(global-set-key (kbd "C-c g n") 'git-gutter:next-hunk)
+(global-set-key (kbd "C-c g p") 'git-gutter:previous-hunk)
+(global-set-key (kbd "C-c g r") 'git-gutter:revert-hunk)
 
 ;auto-complete
 (require 'auto-complete)
@@ -160,10 +165,6 @@
 (define-key cscope-list-entry-keymap "q" 'kill-buffer-and-window)
 (define-key cscope-list-entry-keymap "j" 'nil)
 (define-key cscope-list-entry-keymap "k" 'nil)
-
-;; git-gutter quick find next and previous
-(global-set-key (kbd "C-, n") 'git-gutter:next-hunk)
-(global-set-key (kbd "C-, p") 'git-gutter:previous-hunk)
 
 ;; sr-speedbar 查看c代码定义
 (require 'sr-speedbar)
