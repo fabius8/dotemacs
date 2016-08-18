@@ -1,9 +1,9 @@
 ;;; adoc-mode-autoloads.el --- automatically extracted autoloads
 ;;
 ;;; Code:
-(add-to-list 'load-path (or (file-name-directory #$) (car load-path)))
+(add-to-list 'load-path (directory-file-name (or (file-name-directory #$) (car load-path))))
 
-;;;### (autoloads nil "adoc-mode" "adoc-mode.el" (22250 10476 0 0))
+;;;### (autoloads nil "adoc-mode" "adoc-mode.el" (0 0 0 0))
 ;;; Generated autoloads from adoc-mode.el
 
 (autoload 'adoc-mode "adoc-mode" "\
@@ -12,10 +12,7 @@ Turning on Adoc mode runs the normal hook `adoc-mode-hook'.
 
 \(fn)" t nil)
 
-;;;***
-
-;;;### (autoloads nil nil ("adoc-mode-pkg.el") (22250 10476 288035
-;;;;;;  0))
+(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "adoc-mode" '("adoc-")))
 
 ;;;***
 

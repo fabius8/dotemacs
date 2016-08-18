@@ -1,9 +1,9 @@
 ;;; ggtags-autoloads.el --- automatically extracted autoloads
 ;;
 ;;; Code:
-(add-to-list 'load-path (or (file-name-directory #$) (car load-path)))
+(add-to-list 'load-path (directory-file-name (or (file-name-directory #$) (car load-path))))
 
-;;;### (autoloads nil "ggtags" "ggtags.el" (22435 3871 169650 160000))
+;;;### (autoloads nil "ggtags" "ggtags.el" (0 0 0 0))
 ;;; Generated autoloads from ggtags.el
 
 (autoload 'ggtags-find-project "ggtags" "\
@@ -40,6 +40,8 @@ A function suitable for `imenu-create-index-function'.
 A function suitable for `hippie-expand-try-functions-list'.
 
 \(fn OLD)" nil nil)
+
+(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "ggtags" '("ggtags-")))
 
 ;;;***
 

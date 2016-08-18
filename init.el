@@ -149,7 +149,7 @@
  '(custom-enabled-themes (quote (tango-dark)))
  '(package-selected-packages
    (quote
-    (powerline popwin youdao-dictionary xcscope which-key sr-speedbar smex relative-line-numbers projectile markdown-mode magit gtags git-gutter finder+ fill-column-indicator f evil company cal-china-x bing-dict auto-complete anzu adoc-mode)))
+    (web-mode powerline popwin youdao-dictionary xcscope which-key sr-speedbar smex relative-line-numbers projectile markdown-mode magit gtags git-gutter finder+ fill-column-indicator f evil company cal-china-x bing-dict auto-complete anzu adoc-mode)))
  '(send-mail-function nil)
  '(show-trailing-whitespace t))
 (custom-set-faces
@@ -224,12 +224,12 @@
 (defun set-my-c-mode ()
   (setq c-default-style "linux"
         c-basic-offset 4
-        indent-tabs-mode t
+        ;;indent-tabs-mode t
         tab-width 4)
   )
 (add-hook 'c-mode 'set-my-c-mode)
 (add-hook 'c-mode-common-hook
-          (lambda () (setq indent-tabs-mode t)))
+          (lambda () (setq indent-tabs-mode nil)))
 
 ;; 窗口最大化
 (if (not (eq window-system 'nil))
@@ -342,5 +342,21 @@
 
 ;; highlight symbol
 (global-set-key (kbd "\C-x w .") 'highlight-symbol-at-point)
+
+;; html mode
+(require 'web-mode)
+(add-to-list 'auto-mode-alist '("\\.html$" . web-mode))
+(add-hook 'web-mode-hook 'hs-minor-mode)
+
+(defun my-web-mode-hook ()
+  "Hooks for Web mode."
+  (setq web-mode-markup-indent-offset 4)
+  (setq web-mode-code-indent-offset 4)  
+  (setq web-mode-block-padding 0)
+  (setq web-mode-css-indent-offset 2))
+
+(add-hook 'web-mode-hook 'my-web-mode-hook)
+
+(ido-mode 1)
 
 ;;; init.el ends here

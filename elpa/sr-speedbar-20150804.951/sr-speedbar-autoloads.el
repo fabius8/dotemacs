@@ -1,10 +1,9 @@
 ;;; sr-speedbar-autoloads.el --- automatically extracted autoloads
 ;;
 ;;; Code:
-(add-to-list 'load-path (or (file-name-directory #$) (car load-path)))
+(add-to-list 'load-path (directory-file-name (or (file-name-directory #$) (car load-path))))
 
-;;;### (autoloads nil "sr-speedbar" "sr-speedbar.el" (22253 16560
-;;;;;;  508894 853000))
+;;;### (autoloads nil "sr-speedbar" "sr-speedbar.el" (0 0 0 0))
 ;;; Generated autoloads from sr-speedbar.el
 
 (autoload 'sr-speedbar-toggle "sr-speedbar" "\
@@ -21,6 +20,8 @@ of a speedbar-window.  It will be created if necessary.
 Create `sr-speedbar' window.
 
 \(fn)" t nil)
+
+(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "sr-speedbar" '("sr-speedbar-")))
 
 ;;;***
 
