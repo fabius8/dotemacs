@@ -1,7 +1,7 @@
 ;;; package --- Summary
 ;;; Commentary:
 ; list the packages you want
-(setq package-list '(web-mode xcscope which-key sr-speedbar smex relative-line-numbers projectile markdown-mode magit gtags git-gutter finder+ fill-column-indicator f evil company cal-china-x bing-dict auto-complete anzu adoc-mode))
+(setq package-list '(helm web-mode xcscope which-key sr-speedbar smex relative-line-numbers projectile markdown-mode magit gtags git-gutter finder+ fill-column-indicator f evil company cal-china-x bing-dict auto-complete anzu adoc-mode))
 
 ;;(require 'package)
 ;;  (push '("marmalade" . "https://mirrors.tuna.tsinghua.edu.cn/elpa/marmalade/")
@@ -17,6 +17,10 @@
                          ("marmalade" . "http://marmalade-repo.org/packages/")))
 (package-initialize)
 
+;; ;; split horizontal
+;; (setq split-height-threshold nil)
+;; (setq split-width-threshold 0)
+
 
 ; fetch the list of packages available 
 (unless package-archive-contents
@@ -27,7 +31,9 @@
   (unless (package-installed-p package)
     (package-install package)))
 
-(ido-mode 1)
+;; ido-mode
+;;(ido-mode 1)
+;;(setq ido-enable-flex-matching t)
 
 ;evil
 (require 'evil)
@@ -80,8 +86,9 @@
  '(custom-enabled-themes (quote (tango-dark)))
  '(package-selected-packages
    (quote
-    (web-mode youdao-dictionary xcscope which-key sr-speedbar smex relative-line-numbers projectile markdown-mode magit gtags git-gutter finder+ fill-column-indicator f evil company cal-china-x bing-dict auto-complete anzu adoc-mode)))
+    (helm web-mode youdao-dictionary xcscope which-key sr-speedbar smex relative-line-numbers projectile markdown-mode magit gtags git-gutter finder+ fill-column-indicator f evil company cal-china-x bing-dict auto-complete anzu adoc-mode)))
  '(send-mail-function nil)
+ '(ediff-split-window-function (quote split-window-horizontally))
  '(show-trailing-whitespace t))
 
 ;; 去除 warning, TODO
@@ -97,6 +104,18 @@
 
 ;; relative-line-numbers-mode
 ;(global-relative-line-numbers-mode)
+
+;; helm
+(helm-mode 1)
+(global-set-key "\C-x\ \C-r" #'helm-recentf)
+(global-set-key "\C-x\ \C-f" #'helm-find-files)
+(global-set-key (kbd "C-x r b") #'helm-filtered-bookmarks)
+(global-set-key (kbd "M-x") #'helm-M-x)
+(setq helm-mode-fuzzy-match 1)
+(setq helm-M-x-fuzzy-match 1)
+(define-key helm-map (kbd "TAB") 'helm-execute-persistent-action)
+(define-key helm-map (kbd "C-j") 'helm-select-action)
+;;(define-key helm-map (kbd "DEL") 'helm-recenter-top-bottom-other-window)
 
 ;; 显示列号
 (column-number-mode)
@@ -119,7 +138,7 @@
 (recentf-mode 1)
 (setq recentf-auto-cleanup 'never)
 (setq recentf-max-menu-items 30)
-(global-set-key "\C-x\ \C-r" 'recentf-open-files)
+;;(global-set-key "\C-x\ \C-r" 'recentf-open-files)
 
 ;; dired-mode
 (add-hook 'dired-mode-hook (lambda () (evil-emacs-state)))
