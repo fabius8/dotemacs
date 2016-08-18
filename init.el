@@ -86,7 +86,7 @@
  '(custom-enabled-themes (quote (tango-dark)))
  '(package-selected-packages
    (quote
-    (helm web-mode youdao-dictionary xcscope which-key sr-speedbar smex relative-line-numbers projectile markdown-mode magit gtags git-gutter finder+ fill-column-indicator f evil company cal-china-x bing-dict auto-complete anzu adoc-mode)))
+    package-list))
  '(send-mail-function nil)
  '(ediff-split-window-function (quote split-window-horizontally))
  '(show-trailing-whitespace t))
