@@ -13,3 +13,4 @@ elpa
 *.bak
 \#*\#
 network-security.data
+*.cache
