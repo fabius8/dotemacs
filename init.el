@@ -1,25 +1,33 @@
 ;;; package --- Summary
 ;;; Commentary:
+; list the packages you want
+(setq package-list '(web-mode xcscope which-key sr-speedbar smex relative-line-numbers projectile markdown-mode magit gtags git-gutter finder+ fill-column-indicator f evil company cal-china-x bing-dict auto-complete anzu adoc-mode))
+
+;;(require 'package)
+;;  (push '("marmalade" . "https://mirrors.tuna.tsinghua.edu.cn/elpa/marmalade/")
+;;    package-archives )
+;;  (push '("melpa" . "http://melpa.org/packages/")
+;;    package-archives)
+
+; list the repositories containing them
 (require 'package)
-  (push '("marmalade" . "https://mirrors.tuna.tsinghua.edu.cn/elpa/marmalade/")
-    package-archives )
-  (push '("melpa" . "http://elpa.codefalling.com/melpa/")
-    package-archives)
-  (package-initialize)
+(setq package-archives '(("elpa" . "http://tromey.com/elpa/")
+                         ("gnu" . "http://elpa.gnu.org/packages/")
+                         ("melpa" . "http://melpa.org/packages/")
+                         ("marmalade" . "http://marmalade-repo.org/packages/")))
+(package-initialize)
 
-;; 去除 warning, TODO
-(setq warning-minimum-level :emergency)
 
-;finder+
-(require 'finder+)
+; fetch the list of packages available 
+(unless package-archive-contents
+  (package-refresh-contents))
 
-;; beacon
-(beacon-mode 1)
-;(setq beacon-blink-duration 0.5)
-(setq beacon-blink-delay 1)
+; install the missing packages
+(dolist (package package-list)
+  (unless (package-installed-p package)
+    (package-install package)))
 
-;; mgit
-;;(require 'magit)
+(ido-mode 1)
 
 ;evil
 (require 'evil)
@@ -32,17 +40,52 @@
 (define-key evil-insert-state-map "\C-n" 'next-line)
 (define-key evil-insert-state-map "\C-p" 'previous-line)
 (define-key evil-insert-state-map "\C-v" 'scroll-up-command)
-
 ;;(define-key evil-emacs-state-map [escape] 'evil-exit-emacs-state)
 ;;(defalias 'evil-insert-state 'evil-emacs-state)
 ;;(fset 'evil-insert-state 'evil-emacs-state)
 (define-key evil-motion-state-map "\C-i" 'evil-jump-forward)
+
+;; smex混乱命令输入
+(require 'smex) ; Not needed if you use package.el
+(smex-initialize) ; Can be omitted. This might cause a (minimal) delay
+                  ; when Smex is auto-initialized on its first run.
+(global-set-key (kbd "M-x") 'smex)
+
+;finder+
+(require 'finder+)
+
+;; beacon
+;(require 'beacon)
+;(beacon-mode 1)
+;(setq beacon-blink-duration 0.5)
+;(setq beacon-blink-delay 1)
+
+;; mgit
+;;(require 'magit)
 
 
 ;; 显示 tab 字符
 (require 'whitespace)
 (setq whitespace-style '(tabs trailing space-before-tab indentation empty space-after-tab tab-mark))
 (global-whitespace-mode)
+
+
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(ansi-color-faces-vector
+   [default default default italic underline success warning error])
+ '(custom-enabled-themes (quote (tango-dark)))
+ '(package-selected-packages
+   (quote
+    (web-mode youdao-dictionary xcscope which-key sr-speedbar smex relative-line-numbers projectile markdown-mode magit gtags git-gutter finder+ fill-column-indicator f evil company cal-china-x bing-dict auto-complete anzu adoc-mode)))
+ '(send-mail-function nil)
+ '(show-trailing-whitespace t))
+
+;; 去除 warning, TODO
+(setq warning-minimum-level :emergency)
 
 ;;evil highlight
 ;;(require 'evil-search-highlight-persist)
@@ -138,26 +181,6 @@
 
 ;blink
 (blink-cursor-mode -1)
-
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(ansi-color-faces-vector
-   [default default default italic underline success warning error])
- '(custom-enabled-themes (quote (tango-dark)))
- '(package-selected-packages
-   (quote
-    (web-mode powerline popwin youdao-dictionary xcscope which-key sr-speedbar smex relative-line-numbers projectile markdown-mode magit gtags git-gutter finder+ fill-column-indicator f evil company cal-china-x bing-dict auto-complete anzu adoc-mode)))
- '(send-mail-function nil)
- '(show-trailing-whitespace t))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(default ((t (:family "文泉驿等宽正黑" :foundry "unknown" :slant normal :weight normal :height 120 :width normal)))))
 
 ;; 去掉菜单栏
 (tool-bar-mode -1)
@@ -306,12 +329,6 @@
 (global-set-key (kbd "M-C-<up>") 'enlarge-window)
 (global-set-key (kbd "M-C-<down>") 'shrink-window)
 
-;; smex混乱命令输入
-(require 'smex) ; Not needed if you use package.el
-(smex-initialize) ; Can be omitted. This might cause a (minimal) delay
-                  ; when Smex is auto-initialized on its first run.
-(global-set-key (kbd "M-x") 'smex)
-
 ;; linux, mate <-> command
 ;;(if (eq system-type 'gnu/linux)
 ;;    (setq x-super-keysym 'meta))
@@ -356,7 +373,5 @@
   (setq web-mode-css-indent-offset 2))
 
 (add-hook 'web-mode-hook 'my-web-mode-hook)
-
-(ido-mode 1)
 
 ;;; init.el ends here

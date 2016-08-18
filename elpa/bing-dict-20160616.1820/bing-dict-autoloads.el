@@ -1,15 +1,17 @@
 ;;; bing-dict-autoloads.el --- automatically extracted autoloads
 ;;
 ;;; Code:
-(add-to-list 'load-path (or (file-name-directory #$) (car load-path)))
+(add-to-list 'load-path (directory-file-name (or (file-name-directory #$) (car load-path))))
 
-;;;### (autoloads nil "bing-dict" "bing-dict.el" (22389 44747 0 0))
+;;;### (autoloads nil "bing-dict" "bing-dict.el" (0 0 0 0))
 ;;; Generated autoloads from bing-dict.el
 
 (autoload 'bing-dict-brief "bing-dict" "\
 Show the explanation of WORD from Bing in the echo area.
 
 \(fn WORD)" t nil)
+
+(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "bing-dict" '("bing-dict-")))
 
 ;;;***
 

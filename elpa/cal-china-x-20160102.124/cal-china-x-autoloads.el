@@ -1,10 +1,9 @@
 ;;; cal-china-x-autoloads.el --- automatically extracted autoloads
 ;;
 ;;; Code:
-(add-to-list 'load-path (or (file-name-directory #$) (car load-path)))
+(add-to-list 'load-path (directory-file-name (or (file-name-directory #$) (car load-path))))
 
-;;;### (autoloads nil "cal-china-x" "cal-china-x.el" (22192 20200
-;;;;;;  0 0))
+;;;### (autoloads nil "cal-china-x" "cal-china-x.el" (0 0 0 0))
 ;;; Generated autoloads from cal-china-x.el
 
 (autoload 'cal-china-x-birthday-from-chinese "cal-china-x" "\
@@ -38,10 +37,11 @@ See `cal-china-x-solar-term-name' for a list of solar term names .
 
 \(fn SOLAR-TERM STR)" nil nil)
 
+(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "cal-china-x" '("chinese-date-diary-pattern" "cal" "holiday-")))
+
 ;;;***
 
-;;;### (autoloads nil nil ("cal-china-x-pkg.el") (22192 20200 878627
-;;;;;;  0))
+;;;### (autoloads nil nil ("cal-china-x-pkg.el") (0 0 0 0))
 
 ;;;***
 
