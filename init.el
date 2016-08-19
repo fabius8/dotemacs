@@ -1,13 +1,33 @@
 ;;; package --- Summary
 ;;; Commentary:
 ; list the packages you want
-(setq package-list '(multi-term xclip highlight-parentheses highlight-symbol ggtags helm web-mode xcscope which-key sr-speedbar smex relative-line-numbers projectile markdown-mode magit gtags git-gutter finder+ fill-column-indicator f evil company cal-china-x bing-dict auto-complete anzu adoc-mode))
-
-;;(require 'package)
-;;  (push '("marmalade" . "https://mirrors.tuna.tsinghua.edu.cn/elpa/marmalade/")
-;;    package-archives )
-;;  (push '("melpa" . "http://melpa.org/packages/")
-;;    package-archives)
+(setq package-list '(multi-term
+                     xclip
+                     highlight-parentheses
+                     highlight-symbol
+                     ggtags
+                     helm
+                     web-mode
+                     xcscope
+                     which-key
+                     sr-speedbar
+                     smex
+                     relative-line-numbers
+                     projectile
+                     markdown-mode
+                     magit
+                     gtags
+                     git-gutter
+                     finder+
+                     fill-column-indicator
+                     f
+                     evil
+                     company
+                     cal-china-x
+                     bing-dict
+                     auto-complete
+                     anzu
+                     adoc-mode))
 
 ; list the repositories containing them
 (require 'package)
@@ -80,7 +100,13 @@
  '(ediff-split-window-function (quote split-window-horizontally))
  '(package-selected-packages
    (quote
-    (xclip which-key web-mode sr-speedbar smex relative-line-numbers projectile markdown-mode magit icicles highlight-symbol highlight-parentheses helm-fuzzy-find helm-cscope gtags git-gutter ggtags finder+ fill-column-indicator f evil company cal-china-x bing-dict auto-complete anzu adoc-mode)))
+    (xclip which-key web-mode sr-speedbar smex
+           relative-line-numbers projectile
+           markdown-mode magit icicles highlight-symbol
+           highlight-parentheses helm-fuzzy-find
+           helm-cscope gtags git-gutter ggtags finder+
+           fill-column-indicator f evil company cal-china-x
+           bing-dict auto-complete anzu adoc-mode)))
  '(send-mail-function nil)
  '(show-trailing-whitespace t))
 
