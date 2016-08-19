@@ -12,10 +12,11 @@
 
 ; list the repositories containing them
 (require 'package)
-(setq package-archives '(("elpa" . "http://tromey.com/elpa/")
-                         ("gnu" . "http://elpa.gnu.org/packages/")
-                         ("melpa" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/melpa/")
-                         ("marmalade" . "http://marmalade-repo.org/packages/")))
+(setq package-archives
+      '(("elpa" . "http://tromey.com/elpa/")
+        ("gnu" . "http://elpa.gnu.org/packages/")
+        ("melpa" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/melpa/")
+        ("marmalade" . "http://marmalade-repo.org/packages/")))
 (package-initialize)
 
 ; fetch the list of packages available 
@@ -66,7 +67,9 @@
 
 ;; 显示 tab 字符
 (require 'whitespace)
-;;(setq whitespace-style '(tabs trailing space-before-tab indentation empty space-after-tab tab-mark))
+;;(setq whitespace-style
+;;      '(tabs trailing space-before-tab
+;;        indentation empty space-after-tab tab-mark))
 (setq whitespace-style '(face trailing tabs))
 (global-whitespace-mode)
 
