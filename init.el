@@ -69,8 +69,7 @@
  '(custom-enabled-themes (quote (tango-dark)))
  '(ediff-split-window-function (quote split-window-horizontally))
  '(package-selected-packages
-   (quote
-    (which-key web-mode sr-speedbar smex relative-line-numbers projectile markdown-mode magit icicles helm-fuzzy-find helm-cscope gtags git-gutter ggtags finder+ fill-column-indicator f evil company cal-china-x bing-dict auto-complete anzu adoc-mode)))
+   (quote package-list))
  '(send-mail-function nil)
  '(show-trailing-whitespace t))
 
@@ -359,6 +358,9 @@
   (setq web-mode-css-indent-offset 2))
 
 (add-hook 'web-mode-hook 'my-web-mode-hook)
+
+;; xclip
+(xclip-mode 1)
 
 ;;; init.el ends here
 (custom-set-faces
