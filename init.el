@@ -61,7 +61,8 @@
 
 ;; 显示 tab 字符
 (require 'whitespace)
-(setq whitespace-style '(tabs trailing space-before-tab indentation empty space-after-tab tab-mark))
+;;(setq whitespace-style '(tabs trailing space-before-tab indentation empty space-after-tab tab-mark))
+(setq whitespace-style '(face trailing tabs))
 (global-whitespace-mode)
 
 (custom-set-variables
