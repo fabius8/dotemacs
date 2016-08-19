@@ -1,7 +1,7 @@
 ;;; package --- Summary
 ;;; Commentary:
 ; list the packages you want
-(setq package-list '(helm web-mode xcscope which-key sr-speedbar smex relative-line-numbers projectile markdown-mode magit gtags git-gutter finder+ fill-column-indicator f evil company cal-china-x bing-dict auto-complete anzu adoc-mode))
+(setq package-list '(highlight-parentheses highlight-symbol ggtags helm web-mode xcscope which-key sr-speedbar smex relative-line-numbers projectile markdown-mode magit gtags git-gutter finder+ fill-column-indicator f evil company cal-china-x bing-dict auto-complete anzu adoc-mode))
 
 ;;(require 'package)
 ;;  (push '("marmalade" . "https://mirrors.tuna.tsinghua.edu.cn/elpa/marmalade/")
@@ -17,11 +17,6 @@
                          ("marmalade" . "http://marmalade-repo.org/packages/")))
 (package-initialize)
 
-;; ;; split horizontal
-;; (setq split-height-threshold nil)
-;; (setq split-width-threshold 0)
-
-
 ; fetch the list of packages available 
 (unless package-archive-contents
   (package-refresh-contents))
@@ -30,10 +25,6 @@
 (dolist (package package-list)
   (unless (package-installed-p package)
     (package-install package)))
-
-;; ido-mode
-;;(ido-mode 1)
-;;(setq ido-enable-flex-matching t)
 
 ;evil
 (require 'evil)
@@ -51,30 +42,22 @@
 ;;(fset 'evil-insert-state 'evil-emacs-state)
 (define-key evil-motion-state-map "\C-i" 'evil-jump-forward)
 
-;; smex混乱命令输入
-(require 'smex) ; Not needed if you use package.el
-(smex-initialize) ; Can be omitted. This might cause a (minimal) delay
-                  ; when Smex is auto-initialized on its first run.
-(global-set-key (kbd "M-x") 'smex)
+;; ;; smex混乱命令输入
+;; (require 'smex) ; Not needed if you use package.el
+;; (smex-initialize) ; Can be omitted. This might cause a (minimal) delay
+;;                   ; when Smex is auto-initialized on its first run.
+;; (global-set-key (kbd "M-x") 'smex)
 
 ;finder+
 (require 'finder+)
 
-;; beacon
-;(require 'beacon)
-;(beacon-mode 1)
-;(setq beacon-blink-duration 0.5)
-;(setq beacon-blink-delay 1)
-
 ;; mgit
 ;;(require 'magit)
-
 
 ;; 显示 tab 字符
 (require 'whitespace)
 (setq whitespace-style '(tabs trailing space-before-tab indentation empty space-after-tab tab-mark))
 (global-whitespace-mode)
-
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
@@ -84,15 +67,15 @@
  '(ansi-color-faces-vector
    [default default default italic underline success warning error])
  '(custom-enabled-themes (quote (tango-dark)))
+ '(ediff-split-window-function (quote split-window-horizontally))
  '(package-selected-packages
    (quote
-    package-list))
+    (which-key web-mode sr-speedbar smex relative-line-numbers projectile markdown-mode magit icicles helm-fuzzy-find helm-cscope gtags git-gutter ggtags finder+ fill-column-indicator f evil company cal-china-x bing-dict auto-complete anzu adoc-mode)))
  '(send-mail-function nil)
- '(ediff-split-window-function (quote split-window-horizontally))
  '(show-trailing-whitespace t))
 
 ;; 去除 warning, TODO
-(setq warning-minimum-level :emergency)
+;;(setq warning-minimum-level :emergency)
 
 ;;evil highlight
 ;;(require 'evil-search-highlight-persist)
@@ -101,9 +84,6 @@
 ;;info
 (define-key Info-mode-map (kbd "w") nil)
 (define-key Info-mode-map (kbd "b") nil)
-
-;; relative-line-numbers-mode
-;(global-relative-line-numbers-mode)
 
 ;; helm
 (helm-mode 1)
@@ -131,6 +111,12 @@
 ;auto-complete
 (require 'auto-complete)
 (ac-config-default)
+;; (define-key ac-completing-map (kbd "C-n") 'ac-next)
+;; (define-key ac-completing-map (kbd "C-p") 'ac-previous)
+
+(setq ac-use-menu-map t)
+(define-key ac-menu-map (kbd "C-n") 'ac-next)
+(define-key ac-menu-map (kbd "C-p") 'ac-previous)
 
 ;cal-china-x
 (require 'cal-china-x)
@@ -138,12 +124,12 @@
 (setq cal-china-x-important-holidays cal-china-x-chinese-holidays)
 (setq calendar-holidays cal-china-x-important-holidays)
 
-;recentf
-(require 'recentf)
-(recentf-mode 1)
-(setq recentf-auto-cleanup 'never)
-(setq recentf-max-menu-items 30)
-;;(global-set-key "\C-x\ \C-r" 'recentf-open-files)
+;; ;recentf
+;; (require 'recentf)
+;; (recentf-mode 1)
+;; (setq recentf-auto-cleanup 'never)
+;; (setq recentf-max-menu-items 30)
+;; ;;(global-set-key "\C-x\ \C-r" 'recentf-open-files)
 
 ;; dired-mode
 (add-hook 'dired-mode-hook (lambda () (evil-emacs-state)))
@@ -279,27 +265,6 @@
     (toggle-frame-maximized)
 )
 
-;; 滚屏移动1行，不是中间
-;;(setq scroll-step            1
-;;      scroll-conservatively  10000)
-
-;; ===============有道词典配置====================
-;; Enable Cache
-(setq url-automatic-caching t)
-
-;; Example Key binding
-(global-set-key (kbd "C-c y") 'youdao-dictionary-search-at-point+)
-
-;; Integrate with popwin-el (https://github.com/m2ym/popwin-el)
-;; (push "*Youdao Dictionary*" popwin:special-display-config)
-
-;; Set file path for saving search history
-;; (setq youdao-dictionary-search-history-file "~/.emacs.d/.youdao")
-
-;; Enable Chinese word segmentation support (支持中文分词)
-;; (setq youdao-dictionary-use-chinese-word-segmentation t)
-;; ===============有道词典配置====================
-
 ;; projectile
 (projectile-global-mode)
 
@@ -328,9 +293,6 @@
 (prefer-coding-system 'gb2312)
 (prefer-coding-system 'utf-8)
 
-;(define-key evil-motion-state-map "\C-o" 'jdefaultumplist-previous)
-;(define-key evil-motion-state-map "\C-i" 'jumplist-next)
-
 ;; 自动折叠if语句
 (add-hook 'c-mode-hook
           (lambda ()
@@ -349,10 +311,6 @@
 (global-set-key (kbd "M-C-<up>") 'enlarge-window)
 (global-set-key (kbd "M-C-<down>") 'shrink-window)
 
-;; linux, mate <-> command
-;;(if (eq system-type 'gnu/linux)
-;;    (setq x-super-keysym 'meta))
-
 ;; mac 下 option 作为 meta 键
 (setq mac-option-modifier 'meta)
 (setq mac-command-modifier 'nil)
@@ -361,12 +319,12 @@
     (global-unset-key (kbd "C-SPC")))
 
 ;; anzu
-(global-anzu-mode +1)
+(global-anzu-mode 1)
 
 ;; c 语言一航最多80个字符
 (require 'fill-column-indicator)
 (setq-default fill-column 80)
-(add-hook 'c-mode-hook 'fci-mode)
+(add-hook 'c-mode-hook (lambda() (fci-mode 1)))
 
 (add-hook 'c-mode-common-hook
           (lambda ()
@@ -379,6 +337,14 @@
 
 ;; highlight symbol
 (global-set-key (kbd "\C-x w .") 'highlight-symbol-at-point)
+
+;; hightlight symbol
+(require 'highlight-symbol)
+(setq highlight-symbol-disable '())
+(add-hook 'after-change-major-mode-hook
+          (lambda ()
+            (if (null (memql major-mode highlight-symbol-disable))
+                (highlight-symbol-mode))))
 
 ;; html mode
 (require 'web-mode)
@@ -395,3 +361,9 @@
 (add-hook 'web-mode-hook 'my-web-mode-hook)
 
 ;;; init.el ends here
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
