@@ -1,7 +1,7 @@
 ;;; package --- Summary
 ;;; Commentary:
 ; list the packages you want
-(setq package-list '(xclip highlight-parentheses highlight-symbol ggtags helm web-mode xcscope which-key sr-speedbar smex relative-line-numbers projectile markdown-mode magit gtags git-gutter finder+ fill-column-indicator f evil company cal-china-x bing-dict auto-complete anzu adoc-mode))
+(setq package-list '(multi-term xclip highlight-parentheses highlight-symbol ggtags helm web-mode xcscope which-key sr-speedbar smex relative-line-numbers projectile markdown-mode magit gtags git-gutter finder+ fill-column-indicator f evil company cal-china-x bing-dict auto-complete anzu adoc-mode))
 
 ;;(require 'package)
 ;;  (push '("marmalade" . "https://mirrors.tuna.tsinghua.edu.cn/elpa/marmalade/")
@@ -48,6 +48,10 @@
 ;;                   ; when Smex is auto-initialized on its first run.
 ;; (global-set-key (kbd "M-x") 'smex)
 
+;; multi-term
+(require 'multi-term)
+(setq multi-term-program "/bin/zsh")
+
 ;finder+
 (require 'finder+)
 
@@ -75,7 +79,8 @@
  '(custom-enabled-themes (quote (tango-dark)))
  '(ediff-split-window-function (quote split-window-horizontally))
  '(package-selected-packages
-   (quote package-list))
+   (quote
+    (xclip which-key web-mode sr-speedbar smex relative-line-numbers projectile markdown-mode magit icicles highlight-symbol highlight-parentheses helm-fuzzy-find helm-cscope gtags git-gutter ggtags finder+ fill-column-indicator f evil company cal-china-x bing-dict auto-complete anzu adoc-mode)))
  '(send-mail-function nil)
  '(show-trailing-whitespace t))
 
@@ -340,6 +345,7 @@
 
 ;; hightlight symbol
 (require 'highlight-symbol)
+(add-hook 'c-mode-hook 'highlight-symbol-mode)
 ;; (setq highlight-symbol-disable '())
 ;; (add-hook 'after-change-major-mode-hook
 ;;           (lambda ()
@@ -364,3 +370,9 @@
 (xclip-mode 1)
 
 ;;; init.el ends here
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
