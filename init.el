@@ -340,11 +340,11 @@
 
 ;; hightlight symbol
 (require 'highlight-symbol)
-(setq highlight-symbol-disable '())
-(add-hook 'after-change-major-mode-hook
-          (lambda ()
-            (if (null (memql major-mode highlight-symbol-disable))
-                (highlight-symbol-mode))))
+;; (setq highlight-symbol-disable '())
+;; (add-hook 'after-change-major-mode-hook
+;;           (lambda ()
+;;             (if (null (memql major-mode highlight-symbol-disable))
+;;                 (highlight-symbol-mode))))
 
 ;; html mode
 (require 'web-mode)
