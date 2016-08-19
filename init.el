@@ -99,8 +99,7 @@
  '(custom-enabled-themes (quote (tango-dark)))
  '(ediff-split-window-function (quote split-window-horizontally))
  '(package-selected-packages
-   (quote
-    (xclip which-key web-mode sr-speedbar smex
+   (quote (xclip which-key web-mode sr-speedbar smex
            relative-line-numbers projectile
            markdown-mode magit icicles highlight-symbol
            highlight-parentheses helm-fuzzy-find
