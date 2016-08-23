@@ -1,7 +1,7 @@
 ;;; package --- Summary
 ;;; Commentary:
 ; list the packages you want
-(setq package-list '(multi-term xclip highlight-parentheses
+(setq package-list '(highline multi-term xclip highlight-parentheses
                      highlight-symbol ggtags helm web-mode
                      xcscope which-key sr-speedbar smex
                      relative-line-numbers projectile
@@ -83,13 +83,8 @@
  '(custom-enabled-themes (quote (wombat)))
  '(ediff-split-window-function (quote split-window-horizontally))
  '(package-selected-packages
-   (quote (xclip which-key web-mode sr-speedbar smex
-           relative-line-numbers projectile
-           markdown-mode magit icicles highlight-symbol
-           highlight-parentheses helm-fuzzy-find
-           helm-cscope gtags git-gutter ggtags finder+
-           fill-column-indicator f evil company cal-china-x
-           bing-dict auto-complete anzu adoc-mode)))
+   (quote
+    (highline xclip which-key web-mode sr-speedbar smex relative-line-numbers projectile markdown-mode magit icicles highlight-symbol highlight-parentheses helm-fuzzy-find helm-cscope gtags git-gutter ggtags finder+ fill-column-indicator f evil company cal-china-x bing-dict auto-complete anzu adoc-mode)))
  '(send-mail-function nil)
  '(show-trailing-whitespace t))
 
@@ -378,10 +373,14 @@
 ;; xclip
 (xclip-mode 1)
 
+;; highline current line
+(require 'highline)
+(global-highline-mode)
+
 ;;; init.el ends here
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- )
+ '(highline-face ((t (:background "brightblack")))))
