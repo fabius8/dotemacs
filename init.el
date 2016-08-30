@@ -44,6 +44,8 @@
 ;;(fset 'evil-insert-state 'evil-emacs-state)
 (define-key evil-motion-state-map "\C-i" 'evil-jump-forward)
 
+(setq evil-want-fine-undo t)
+
 ;; ;; smex混乱命令输入
 ;; (require 'smex) ; Not needed if you use package.el
 ;; (smex-initialize) ; Can be omitted. This might cause a (minimal) delay
