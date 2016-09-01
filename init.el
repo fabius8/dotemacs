@@ -266,12 +266,12 @@
               indent-tabs-mode nil)
 
 ;; c-mode 格式
+(c-set-offset 'substatement-open 0)
 (defun set-my-c-mode ()
   (setq c-default-style "linux"
         c-basic-offset 4
         ;;indent-tabs-mode t
-        tab-width 4)
-  )
+        tab-width 4))
 (add-hook 'c-mode 'set-my-c-mode)
 (add-hook 'c-mode-common-hook
           (lambda () (setq indent-tabs-mode nil)))
