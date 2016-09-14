@@ -1,7 +1,7 @@
 ;;; package --- Summary
 ;;; Commentary:
 ; list the packages you want
-(setq package-list '(highline multi-term xclip highlight-parentheses
+(setq package-list '(elpy highline multi-term xclip highlight-parentheses
                      highlight-symbol ggtags helm web-mode
                      xcscope which-key sr-speedbar smex
                      relative-line-numbers projectile
@@ -27,6 +27,9 @@
 (dolist (package package-list)
   (unless (package-installed-p package)
     (package-install package)))
+
+;;python
+(elpy-enable)
 
 ;evil
 (require 'evil)
