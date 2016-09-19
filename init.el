@@ -350,8 +350,10 @@
 (add-hook 'c-mode-hook 'highlight-parentheses-mode)
 
 ;; highlight symbol
-(global-set-key (kbd "\C-x w .") 'highlight-symbol)
-(global-set-key (kbd "\C-x w u") 'highlight-symbol-remove-all)
+(global-set-key (kbd "\C-c s s") 'highlight-symbol)
+(global-set-key (kbd "\C-c s u") 'highlight-symbol-remove-all)
+(global-set-key (kbd "\C-c s n") 'highlight-symbol-next)
+(global-set-key (kbd "\C-c s p") 'highlight-symbol-prev)
 
 ;; hightlight symbol
 (require 'highlight-symbol)
