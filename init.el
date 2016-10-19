@@ -23,6 +23,8 @@
 (unless package-archive-contents
   (package-refresh-contents))
 
+;; test
+
 ; install the missing packages
 (dolist (package package-list)
   (unless (package-installed-p package)
