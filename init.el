@@ -133,6 +133,10 @@
 ;; (define-key ac-completing-map (kbd "C-n") 'ac-next)
 ;; (define-key ac-completing-map (kbd "C-p") 'ac-previous)
 
+;;makfile
+(add-hook 'makefile-mode
+    (lambda () (auto-complete-mode 1)))
+
 (setq ac-use-menu-map t)
 (define-key ac-menu-map (kbd "C-n") 'ac-next)
 (define-key ac-menu-map (kbd "C-p") 'ac-previous)
@@ -199,6 +203,7 @@
 ;which-key
 (require 'which-key)
 (which-key-mode)
+(defalias 'display-buffer-in-major-side-window 'window--make-major-side-window)
 
 ;asciidoc
 (require 'adoc-mode)
