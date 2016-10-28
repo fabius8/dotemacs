@@ -205,7 +205,7 @@
 ;which-key
 (require 'which-key)
 (which-key-mode)
-(defalias 'display-buffer-in-major-side-window 'window--make-major-side-window)
+;;(defalias 'display-buffer-in-major-side-window 'window--make-major-side-window)
 
 ;asciidoc
 (require 'adoc-mode)
@@ -378,8 +378,8 @@
 
 (defun my-web-mode-hook ()
   "Hooks for Web mode."
-  (setq web-mode-markup-indent-offset 4)
-  (setq web-mode-code-indent-offset 4)  
+  (setq web-mode-markup-indent-offset 2)
+  (setq web-mode-code-indent-offset 2)  
   (setq web-mode-block-padding 0)
   (setq web-mode-css-indent-offset 2))
 
