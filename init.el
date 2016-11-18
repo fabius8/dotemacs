@@ -85,6 +85,7 @@
  ;; If there is more than one, they won't work right.
  '(ansi-color-faces-vector
    [default default default italic underline success warning error])
+ '(case-replace nil)
  '(custom-enabled-themes (quote (wombat)))
  '(ediff-split-window-function (quote split-window-horizontally))
  '(package-selected-packages
@@ -390,10 +391,11 @@
 (require 'highline)
 (global-highline-mode)
 
+
 ;;; init.el ends here
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(highline-face ((t (:background "brightblack")))))
+ '(highline-face ((t (:background "magenta")))))
