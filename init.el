@@ -1,7 +1,7 @@
 ;;; package --- Summary
 ;;; Commentary:
 ; list the packages you want
-(setq package-list '(elpy highline multi-term xclip highlight-parentheses
+(setq package-list '(company-irony irony elpy highline multi-term xclip highlight-parentheses
                      highlight-symbol ggtags helm web-mode
                      xcscope which-key sr-speedbar smex
                      relative-line-numbers projectile
@@ -393,6 +393,23 @@
 (require 'highline)
 (global-highline-mode)
 
+
+(add-hook 'c++-mode-hook 'irony-mode)
+(add-hook 'c-mode-hook 'irony-mode)
+(add-hook 'objc-mode-hook 'irony-mode)
+;; replace the `completion-at-point' and `complete-symbol' bindings in
+;; irony-mode's buffers by irony-mode's function
+(defun my-irony-mode-hook ()
+  (define-key irony-mode-map [remap completion-at-point]
+    'irony-completion-at-point-async)
+  (define-key irony-mode-map [remap complete-symbol]
+    'irony-completion-at-point-async))
+(add-hook 'irony-mode-hook 'my-irony-mode-hook)
+(add-hook 'irony-mode-hook 'irony-cdb-autosetup-compile-options)
+
+(add-hook 'c-mode-hook 'company-mode)
+(eval-after-load 'company
+  '(add-to-list 'company-backends 'company-irony))
 
 ;;; init.el ends here
 (custom-set-faces
