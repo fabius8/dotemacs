@@ -88,6 +88,9 @@
  '(ansi-color-faces-vector
    [default default default italic underline success warning error])
  '(case-replace nil)
+ '(cscope-indexer-suffixes
+   (quote
+    ("*.[chly]" "*.[ch]xx" "*.[ch]pp" "*.cc" "*.hh" "*.html" "*.js")))
  '(custom-enabled-themes (quote (wombat)))
  '(ediff-split-window-function (quote split-window-horizontally))
  '(package-selected-packages
@@ -380,8 +383,10 @@
 (defun my-web-mode-hook ()
   "Hooks for Web mode."
   (setq web-mode-markup-indent-offset 2)
-  (setq web-mode-code-indent-offset 2)  
+  (setq web-mode-code-indent-offset 2)
   (setq web-mode-block-padding 0)
+  (setq web-mode-style-padding 1)
+  (setq web-mode-script-padding 2)
   (setq web-mode-css-indent-offset 2))
 
 (add-hook 'web-mode-hook 'my-web-mode-hook)
