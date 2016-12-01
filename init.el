@@ -387,7 +387,11 @@
   (setq web-mode-block-padding 0)
   (setq web-mode-style-padding 1)
   (setq web-mode-script-padding 2)
-  (setq web-mode-css-indent-offset 2))
+  (setq web-mode-css-indent-offset 2)
+  (setq web-mode-enable-auto-pairing t)
+  (setq web-mode-enable-current-column-highlight t)
+  (setq web-mode-enable-current-element-highlight t)
+  )
 
 (add-hook 'web-mode-hook 'my-web-mode-hook)
 
@@ -422,4 +426,5 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(highline-face ((t (:background "magenta")))))
+ '(highline-face ((t (:background "magenta"))))
+ '(web-mode-block-face ((t (:background "brightblue")))))
