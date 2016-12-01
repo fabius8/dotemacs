@@ -1,7 +1,7 @@
 ;;; package --- Summary
 ;;; Commentary:
 ; list the packages you want
-(setq package-list '(company-irony irony elpy highline multi-term xclip highlight-parentheses
+(setq package-list '(powerline company-irony irony elpy highline multi-term xclip highlight-parentheses
                      highlight-symbol ggtags helm web-mode
                      xcscope which-key sr-speedbar smex
                      relative-line-numbers projectile
@@ -388,6 +388,7 @@
   (setq web-mode-style-padding 1)
   (setq web-mode-script-padding 2)
   (setq web-mode-css-indent-offset 2)
+  (setq web-mode-enable-auto-expanding t)
   (setq web-mode-enable-auto-pairing t)
   (setq web-mode-enable-current-column-highlight t)
   (setq web-mode-enable-current-element-highlight t)
@@ -401,6 +402,9 @@
 ;; highline current line
 (require 'highline)
 (global-highline-mode)
+
+(require 'powerline)
+(powerline-default-theme)
 
 
 (add-hook 'c++-mode-hook 'irony-mode)
