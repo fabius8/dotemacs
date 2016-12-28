@@ -1,13 +1,13 @@
 ;;; package --- Summary
 ;;; Commentary:
 ; list the packages you want
-(setq package-list '(powerline company-irony irony elpy highline multi-term xclip highlight-parentheses
+(setq package-list '(company-irony irony elpy highline xclip highlight-parentheses
                      highlight-symbol ggtags helm web-mode
                      xcscope which-key sr-speedbar smex
                      relative-line-numbers projectile
                      markdown-mode magit gtags git-gutter
                      finder+ fill-column-indicator f evil
-                     company cal-china-x bing-dict auto-complete
+                     company bing-dict auto-complete
                      anzu adoc-mode))
 
 ; list the repositories containing them
@@ -58,8 +58,8 @@
 ;; (global-set-key (kbd "M-x") 'smex)
 
 ;; multi-term
-(require 'multi-term)
-(setq multi-term-program "/bin/zsh")
+;;(require 'multi-term)
+;;(setq multi-term-program "/bin/zsh")
 
 ;finder+
 (require 'finder+)
@@ -95,7 +95,7 @@
  '(ediff-split-window-function (quote split-window-horizontally))
  '(package-selected-packages
    (quote
-    (highline xclip which-key web-mode sr-speedbar smex relative-line-numbers projectile markdown-mode magit icicles highlight-symbol highlight-parentheses helm-fuzzy-find helm-cscope gtags git-gutter ggtags finder+ fill-column-indicator f evil company cal-china-x bing-dict auto-complete anzu adoc-mode)))
+    (highline xclip which-key web-mode sr-speedbar smex relative-line-numbers projectile markdown-mode magit icicles highlight-symbol highlight-parentheses helm-fuzzy-find helm-cscope gtags git-gutter ggtags finder+ fill-column-indicator f evil company bing-dict auto-complete anzu adoc-mode)))
  '(send-mail-function nil)
  '(show-trailing-whitespace t))
 
@@ -402,9 +402,6 @@
 ;; highline current line
 (require 'highline)
 (global-highline-mode)
-
-(require 'powerline)
-(powerline-default-theme)
 
 
 (add-hook 'c++-mode-hook 'irony-mode)
