@@ -1,7 +1,7 @@
 ;;; package --- Summary
 ;;; Commentary:
 ; list the packages you want
-(setq package-list '(company-irony irony elpy highline xclip highlight-parentheses
+(setq package-list '(chinese-pyim company-irony irony elpy highline xclip highlight-parentheses
                      highlight-symbol ggtags helm web-mode
                      xcscope which-key sr-speedbar smex
                      relative-line-numbers projectile
@@ -368,7 +368,7 @@
 
 ;; hightlight symbol
 (require 'highlight-symbol)
-(add-hook 'c-mode-hook 'highlight-symbol-mode)
+;(add-hook 'c-mode-hook 'highlight-symbol-mode)
 ;; (setq highlight-symbol-disable '())
 ;; (add-hook 'after-change-major-mode-hook
 ;;           (lambda ()
@@ -395,6 +395,11 @@
   )
 
 (add-hook 'web-mode-hook 'my-web-mode-hook)
+
+(require 'chinese-pyim)
+(require 'chinese-pyim-basedict) ; 拼音词库设置，五笔用户 *不需要* 此行设置
+(chinese-pyim-basedict-enable)   ; 拼音词库，五笔用户 *不需要* 此行设置
+(global-set-key (kbd "\C-c t") 'toggle-input-method)
 
 ;; xclip
 (xclip-mode 1)
@@ -427,5 +432,5 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(highline-face ((t (:background "magenta"))))
+ '(highline-face ((t nil)))
  '(web-mode-block-face ((t (:background "brightblue")))))
