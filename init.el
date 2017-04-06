@@ -148,10 +148,10 @@
 (define-key ac-menu-map (kbd "C-p") 'ac-previous)
 
 ;cal-china-x
-(require 'cal-china-x)
-(setq mark-holidays-in-calendar t)
-(setq cal-china-x-important-holidays cal-china-x-chinese-holidays)
-(setq calendar-holidays cal-china-x-important-holidays)
+;(require 'cal-china-x)
+;(setq mark-holidays-in-calendar t)
+;(setq cal-china-x-important-holidays cal-china-x-chinese-holidays)
+;(setq calendar-holidays cal-china-x-important-holidays)
 
 ;; ;recentf
 ;; (require 'recentf)
