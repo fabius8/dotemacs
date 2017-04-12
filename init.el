@@ -129,6 +129,8 @@
 ;git-gutter
 (global-git-gutter-mode 1)
 ;; git-gutter quick find next and previous
+(custom-set-variables
+ '(git-gutter:handled-backends '(git hg bzr svn)))
 (global-set-key (kbd "C-c g n") 'git-gutter:next-hunk)
 (global-set-key (kbd "C-c g p") 'git-gutter:previous-hunk)
 (global-set-key (kbd "C-c g r") 'git-gutter:revert-hunk)
