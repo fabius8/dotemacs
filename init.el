@@ -8,7 +8,7 @@
                      markdown-mode magit gtags git-gutter
                       fill-column-indicator f evil
                      company bing-dict auto-complete
-                     anzu adoc-mode))
+                     anzu adoc-mode rjsx-mode))
 
 ; list the repositories containing them
 (require 'package)
@@ -91,9 +91,10 @@
     ("*.[chly]" "*.[ch]xx" "*.[ch]pp" "*.cc" "*.hh" "*.html" "*.js")))
  '(custom-enabled-themes (quote (wombat)))
  '(ediff-split-window-function (quote split-window-horizontally))
+ '(git-gutter:handled-backends (quote (git hg bzr svn)))
  '(package-selected-packages
    (quote
-    (highline xclip which-key web-mode sr-speedbar smex projectile markdown-mode magit icicles highlight-symbol highlight-parentheses helm-fuzzy-find helm-cscope gtags git-gutter ggtags fill-column-indicator f evil company bing-dict auto-complete anzu adoc-mode)))
+    (rjsx-mode highline xclip which-key web-mode sr-speedbar smex projectile markdown-mode magit icicles highlight-symbol highlight-parentheses helm-fuzzy-find helm-cscope gtags git-gutter ggtags fill-column-indicator f evil company bing-dict auto-complete anzu adoc-mode)))
  '(send-mail-function nil)
  '(show-trailing-whitespace t))
 
@@ -127,8 +128,7 @@
 ;git-gutter
 (global-git-gutter-mode 1)
 ;; git-gutter quick find next and previous
-(custom-set-variables
- '(git-gutter:handled-backends '(git hg bzr svn)))
+
 (global-set-key (kbd "C-c g n") 'git-gutter:next-hunk)
 (global-set-key (kbd "C-c g p") 'git-gutter:previous-hunk)
 (global-set-key (kbd "C-c g r") 'git-gutter:revert-hunk)
@@ -403,6 +403,8 @@
 ;; highline current line
 (require 'highline)
 (global-highline-mode)
+
+(add-to-list 'auto-mode-alist '("components\\/.*\\.js\\'" . rjsx-mode))
 
 
 (add-hook 'c++-mode-hook 'irony-mode)
