@@ -405,6 +405,7 @@
 (global-highline-mode)
 
 (add-to-list 'auto-mode-alist '("components\\/.*\\.js\\'" . rjsx-mode))
+(add-to-list 'auto-mode-alist '("\\.js$" . rjsx-mode))
 
 
 (add-hook 'c++-mode-hook 'irony-mode)
