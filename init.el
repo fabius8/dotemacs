@@ -31,6 +31,7 @@
     (package-install package)))
 
 ;;python
+;; https://github.com/jorgenschaefer/elpy
 (elpy-enable)
 
 ;evil
