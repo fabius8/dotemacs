@@ -93,6 +93,7 @@
  '(custom-enabled-themes (quote (wombat)))
  '(ediff-split-window-function (quote split-window-horizontally))
  '(git-gutter:handled-backends (quote (git hg bzr svn)))
+ '(js-indent-level 2)
  '(package-selected-packages
    (quote
     (rjsx-mode highline xclip which-key web-mode sr-speedbar smex projectile markdown-mode magit icicles highlight-symbol highlight-parentheses helm-fuzzy-find helm-cscope gtags git-gutter ggtags fill-column-indicator f evil company bing-dict auto-complete anzu adoc-mode)))
